@@ -25,3 +25,6 @@ installed packages on client side
 Accessing the database through the CLI with 
 
 ```mongo``` and to confirm the database is created use ```show dbs``` 
+
+## Structure
+- Models Views Controllers (MVC) paradigm as part of the process to maintain architecture organization and code integrity. 

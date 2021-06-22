@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const privateRoute = require('../middlewares/privateRoute');
 
 const User = require('../models/User');
 
@@ -58,35 +57,5 @@ router.post('/register', async (req, res) => {
 	}
 });
 
-router.post('/create', privateRoute, async (req, res) => {
-	const { name, thumbnail, html } = req.body;
-	const page = { name, thumbnail, html };
-	const id = req.session.user;
-	try {
-		await User.updateOne(
-			{ _id: id },
-			{
-				$push: {
-					pages: page,
-				},
-			}
-		);
-		res.sendStatus(201);
-	} catch (err) {
-		console.log(err);
-		res.sendStatus(500);
-	}
-});
-
-router.get('/pages', async (req, res) => {
-	const id = req.session.user;
-	try {
-		const user = await User.findOne({ _id: id }, { 'pages.html': 0 });
-		res.send(user.pages);
-	} catch (err) {
-		console.log(err);
-		res.status(404);
-	}
-});
 
 module.exports = router;
