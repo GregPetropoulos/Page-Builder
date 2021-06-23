@@ -53,7 +53,7 @@ app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
 });
 
-httpServer.listen(process.env.PORT || 3002)
+httpServer.listen(process.env.PORT || 8080);
 
 // function () {
 // 	console.log(`🌎  ==> API Server now listening on PORT ${httpServer}!`);
