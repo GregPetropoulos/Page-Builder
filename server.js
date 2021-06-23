@@ -6,9 +6,6 @@ const httpServer = require('http').createServer(app);
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
 const routes = require("./routes");
-// const User = require('./models/User');
-// const stream = require('stream');
-// const api = require('./routes/api');
 require('dotenv').config();
 
 
@@ -48,8 +45,7 @@ app.use(express.static(path.join(__dirname, 'frontend/build')))
 			}),
 		})
 	);
-	
-// Pointing to index in routes directory /api endpoint
+// POINTING TO ROUTES FOLDER
 app.use(routes);
 
 // Need clarification here
@@ -57,7 +53,9 @@ app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
 });
 
-httpServer.listen(process.env.PORT || 8080, function () {
-	console.log(`🌎  ==> API Server now listening on PORT ${httpServer}!`);
-});
+httpServer.listen(process.env.PORT || 3002)
+
+// function () {
+// 	console.log(`🌎  ==> API Server now listening on PORT ${httpServer}!`);
+// });
 
