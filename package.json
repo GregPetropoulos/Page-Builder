@@ -12,16 +12,22 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"axios": "^0.21.1",
 		"bcrypt": "^5.0.1",
 		"connect-mongo": "^4.4.1",
 		"dotenv": "^10.0.0",
 		"express": "^4.17.1",
 		"express-session": "^1.17.2",
-		"mongoose": "^5.12.13",
-		"socket.io": "^4.1.2"
+		"moment": "^2.29.1",
+		"mongoose": "^5.12.14",
+		"redux": "^4.1.0",
+		"socket.io": "^4.1.2",
+		"thunk": "0.0.1"
 	},
 	"devDependencies": {
 		"concurrently": "^6.2.0",
+		"eslint": "^7.29.0",
+		"kill-port": "^1.6.1",
 		"nodemon": "^2.0.7"
 	}
 }
