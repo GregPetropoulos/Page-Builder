@@ -4,7 +4,7 @@ const pageController = require("../../controllers/pageController");
 
 // SERVE HTML 
 // FIND USERS CORRESPONDING PAGE ID
-router.route('/page/:id')
+router.route('/:id')
 .get(pageController.findIdPage)
 
 // FIND ALL PAGES OF A USER
@@ -16,7 +16,7 @@ router.route('/create')
 .post (pageController.updateOne)
 
 // DOWNLOAD USER PAGE
-router.route('/page/:id/download')
+router.route('/:id/download')
 .get(pageController.download)
 
 module.exports = router;

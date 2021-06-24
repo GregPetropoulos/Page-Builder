@@ -12,9 +12,9 @@ router.route("/register")
 .post(userController.signUpUser);
 
 // ---------------------
-// need to finish logout
-// router.route("/logout")
-// .post(userController.logoutUser)
+// USER LOGOUT AND REDIRECT
+router.route("/logout")
+.post(userController.logoutUser)
 
 // // will need a delete a user button and route
 // router.route("/login")

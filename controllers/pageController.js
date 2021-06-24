@@ -24,7 +24,7 @@ module.exports = {
   findAllPages: async (req, res) => {
     const id = req.session.user;
     try {
-      const user = await db.findOne({ _id: id }, { "pages.html": 0 });
+      const user = await db.findOne({ _id: id });
       res.send(user.pages);
     } catch (err) {
       console.log(err);
@@ -80,3 +80,6 @@ module.exports = {
       }
     }),
 };
+
+// From line 27
+// , { "pages.html": 0 }
