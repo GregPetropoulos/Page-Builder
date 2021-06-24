@@ -37,43 +37,44 @@ export const Register = () => {
 	};
 
 	return (
-		<form className="p-5 container" onSubmit={handleSubmit}>
-			<div className="form-group">
-				<label htmlFor="registerEmail">Email address</label>
+		<form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 h-full" onSubmit={handleSubmit}>
+			<div className="mb-4">
+				<label htmlFor="registerEmail" className="block text-gray-700 text-sm font-bold mb-2">
+					Email address
+				</label>
 				<input
 					type="email"
-					className="form-control"
+					className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 					id="registerEmail"
-					aria-describedby="emailHelpRegister"
 					placeholder="Enter email"
 				/>
 				<small id="emailHelpRegister" className="form-text text-muted">
 					We'll never share your email with anyone else.
 				</small>
 			</div>
-			<div className="form-group">
+			<div className="mb-4">
 				<label htmlFor="registerPassword">Password</label>
 				<input
 					type="password"
-					className="form-control"
+					className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 					id="registerPassword"
 					placeholder="Password"
 				/>
 			</div>
-			<div className="form-group">
-				<label htmlFor="registerConfirmPassword">
+			<div className="mb-6">
+				<label htmlFor="registerConfirmPassword" className="block text-gray-700 text-sm font-bold mb-2">
 					Confirm Password
 				</label>
 				<input
 					type="password"
-					className="form-control"
+					className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
 					id="registerConfirmPassword"
 					placeholder="Password"
 				/>
 			</div>
 			<p className="text-danger text-center">{error}</p>
-			<div className="d-flex justify-content-center">
-				<button type="submit" className="btn btn-primary">
+			<div className="flex items-center justify-between">
+				<button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
 					Register
 				</button>
 			</div>
