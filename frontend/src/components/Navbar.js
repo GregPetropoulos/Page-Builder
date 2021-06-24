@@ -4,7 +4,7 @@ export const Navbar = () => {
   <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
     <div className="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
       <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="#pablo">
-        <img src/>
+      <img src='./images/logopb.png' className="object-scale-down"/>
       </a>
       <button className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button">
         <span className="block relative w-6 h-px rounded-sm bg-white"></span>
@@ -15,22 +15,22 @@ export const Navbar = () => {
     <div className="lg:flex flex-grow items-center" id="example-navbar-warning">
       <ul className="flex flex-col lg:flex-row list-none mr-auto">
         <li className="nav-item">
-          <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/">
+          <a className="px-3 py-2 flex items-center text-xs uppercase font-black leading-snug text-white hover:opacity-75" href="/">
           Home
           </a>
         </li>
         <li className="nav-item">
-          <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/templates">
+          <a className="px-3 py-2 flex items-center text-xs uppercase font-black leading-snug text-white hover:opacity-75" href="/templates">
              <span className="ml-2">Templates</span>
           </a>
         </li>
         <li className="nav-item">
-          <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/snippets">
+          <a className="px-3 py-2 flex items-center text-xs uppercase font-black leading-snug text-white hover:opacity-75" href="/snippets">
             <span className="ml-2">Snippets</span>
           </a>
         </li>
 		<li className="nav-item">
-          <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/projects">
+          <a className="px-3 py-2 flex items-center text-xs uppercase font-black leading-snug text-white hover:opacity-75" href="/projects">
             <span className="ml-2">Projects</span>
           </a>
         </li>
