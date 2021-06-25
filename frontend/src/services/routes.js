@@ -1,4 +1,6 @@
 export const routes = {
-	login: () => `/api/login`,
-	register: () => `/api/register`,
+	login: () => `/api/users/login`,
+	register: () => `/api/users/register`,
+	logout:() => `/api/users/logout`,
+	delete: () => `/api/users/delete`,
 };

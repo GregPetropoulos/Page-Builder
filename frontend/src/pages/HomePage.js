@@ -2,11 +2,11 @@ import { usePages } from '../hooks/usePages';
 import { PageCard } from '../components/PageCard';
 
 export const HomePage = () => {
-	const { pages } = usePages();
+	const { pages } = usePages([]);
 	return (
 		<div className="d-flex gap flex-wrap justify-content-center">
 			{pages.length > 0 ? (
-				pages.map(page => (
+				pages.map((page) => (
 					<PageCard
 						key={page._id}
 						id={page._id}

@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
 		localStorage.removeItem('user');
 		setCurrentUser(null);
 	};
+	// may need to add  a delete variable
 
 	useEffect(() => {
 		if (currentUser) {

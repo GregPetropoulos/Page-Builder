@@ -13,11 +13,11 @@ router.route("/register")
 
 // ---------------------
 // need to finish logout
-// router.route("/logout")
-// .post(userController.logoutUser)
+router.route("/logout")
+.post(userController.logoutUser)
 
 // // will need a delete a user button and route
-// router.route("/login")
+// router.route("/delete")
 // .delete(userController.deleteUser)
 // ---------------------
 
