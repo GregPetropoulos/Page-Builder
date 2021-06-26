@@ -75,7 +75,7 @@ module.exports = {
     try {
     req.session.destroy(err => {
       if (err){
-        return res.redirect('/pages/HomePage')
+        return res.redirect('/')
       }
       res.clearCookie(USER_SESSION)
       res.redirect('/login')

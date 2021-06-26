@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export const PageCard = ({ thumbnail, name, id }) => {
-	const [thumbnailSrc, setThumbnailSrc] = useState();
+	const [thumbnailSrc, setThumbnailSrc] = useState("https://via.placeholder.com/200");
 
 	useEffect(() => {
 		import(`../images/${thumbnail}`).then(mod =>
