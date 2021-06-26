@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { TemplateEditor } from './components/TemplateEditor';
 import { TemplatePage } from './pages/TemplatesPage';
+import { ProjectsPage } from './pages/ProjectsPage';
 import { HomePage } from './pages/HomePage';
 import { LandingPage } from './pages/LandingPage';
 import { templates } from './templates/templates';
@@ -21,6 +22,9 @@ function App() {
 					<PrivateRoute path="/templates">
 						<TemplatePage configs={templates} />
 					</PrivateRoute>
+					{/* <PrivateRoute path="/projects">
+						<ProjectsPage/>
+					</PrivateRoute> */}
 					<PrivateRoute path="/create/:id">
 						<TemplateEditor configs={templates} />
 					</PrivateRoute>
