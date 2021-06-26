@@ -19,12 +19,15 @@ export const PageCard = ({ thumbnail, name, id }) => {
 			<div className="d-flex flex-column">
 				<p className="template-title text-center">{name}</p>
 				<div className="d-flex flex-row justify-content-center">
-					<a className="btn btn-primary mx-1" href={`/page/${id}`}>
+					<a
+						className="btn btn-primary mx-1"
+						href={`/api/page/${id}`}
+					>
 						View
 					</a>
 					<a
 						className="btn btn-secondary"
-						href={`/page/${id}/download`}
+						href={`/api/page/${id}/download`}
 						download
 					>
 						Download

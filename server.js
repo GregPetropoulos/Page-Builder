@@ -5,9 +5,8 @@ const app = express();
 const httpServer = require('http').createServer(app);
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
-const routes = require("./routes");
+const routes = require('./routes');
 require('dotenv').config();
-
 
 //set connection string with process variables
 const mongooseInit = async () => {
@@ -26,6 +25,7 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 console.log('Running in production mode: ', IS_PROD);
 
 app.use(express.static(path.join(__dirname, 'frontend/build')))
+	.set('trust proxy', 1)
 	.use(express.json())
 	.use(
 		session({
@@ -58,4 +58,3 @@ httpServer.listen(process.env.PORT || 8080);
 // function () {
 // 	console.log(`🌎  ==> API Server now listening on PORT ${httpServer}!`);
 // });
-
