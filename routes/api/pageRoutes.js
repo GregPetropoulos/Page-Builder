@@ -11,9 +11,13 @@ router.route('/page/:id')
 router.route('/pages')
 .get(pageController.findAllPages)
 
+//test pages 
+router.route('/test')
+.get(pageController.testPages)
+
 // CREATE A PAGE
 router.route('/create')
-.post (pageController.updateOne)
+.post(pageController.updateOne)
 
 // DOWNLOAD USER PAGE
 router.route('/page/:id/download')

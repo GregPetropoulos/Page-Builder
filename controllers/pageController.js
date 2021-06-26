@@ -21,10 +21,23 @@ module.exports = {
     }
   },
 
+  testPages: async (req, res) => {
+    console.log("here");
+    const myArray = ["gabe", "gregg"];
+    try {
+      const stuff = await myArray;
+      res.send({ stuff: stuff });
+    } catch (e) {
+      console.error({ e });
+    }
+  },
+
   findAllPages: async (req, res) => {
+    console.log("all pages route");
     const id = req.session.user;
     try {
       const user = await db.findOne({ _id: id }, { "pages.html": 0 });
+      console.log("return pages", user.pages);
       res.send(user.pages);
     } catch (err) {
       console.log(err);

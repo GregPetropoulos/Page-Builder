@@ -14,7 +14,8 @@ const createPage = async (name, thumbnail, html) => {
 };
 
 const fetchPages = async () => {
-	const response = await axios.get('/api/pages', { withCredentials: true });
+	const response = await axios.get('/api/pages', { headers: {'Content-Type': 'application/json'} }, { withCredentials: true });
+	console.log('response', response)
 	return response.data;
 };
 

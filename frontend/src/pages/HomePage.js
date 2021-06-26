@@ -1,12 +1,17 @@
 import { usePages } from '../hooks/usePages';
 import { PageCard } from '../components/PageCard';
+import {Login} from '../components/Login'
 
 export const HomePage = () => {
-	const { pages } = usePages([]);
+	const { pages } = usePages();
+	console.log('pages 12', pages)
+	console.log(typeof pages)
+	console.log(Array.isArray(pages))
 	return (
 		<div className="d-flex gap flex-wrap justify-content-center">
-			{pages.length > 0 ? (
-				pages.map((page) => (
+			<Login/>
+			{/* {pages.length > 0 ? (
+				pages.map(page => (
 					<PageCard
 						key={page._id}
 						id={page._id}
@@ -21,7 +26,7 @@ export const HomePage = () => {
 						Create page
 					</a>
 				</div>
-			)}
+)} */}
 		</div>
 	);
 };
