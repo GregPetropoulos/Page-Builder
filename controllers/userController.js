@@ -53,24 +53,39 @@ module.exports = {
       });
     }
   },
+  // logoutUser: async (req, res) => {
+  //   const { email } = req.body;
+  //   const user = await db.findOne({
+  //     email,
+  //   });
+  //   try {
+  //     if (user) {
+  //       req.logout();
+  //       res.status(200).json({ msg: "LOGGED OUT" });
+  //     } else {
+  //       res.status(404).json({ msg: "NO USER TO LOGOUT" });
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     res.status(404);
+  //   }
+  // },
+
   logoutUser: async (req, res) => {
-    const { email } = req.body;
-    const user = await db.findOne({
-      email,
-    });
     try {
-      if (user) {
-        req.logout();
-        res.status(200).json({ msg: "LOGGED OUT" });
-      } else {
-        res.status(404).json({ msg: "NO USER TO LOGOUT" });
+    req.session.destroy(err => {
+      if (err){
+        return res.redirect('/pages/HomePage')
       }
-    } catch (err) {
-      console.log(err);
-      res.status(404);
+      res.clearCookie(USER_SESSION)
+      res.redirect('/login')
+    })
+    console.log('USER LOGGED OUT')
+    } catch (err){
+      res.sendStatus(404);
     }
-  },
   // deleteUser: async (req,res) =>{
   //   const {email}
   // }
-};
+},
+}

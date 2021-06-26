@@ -8,12 +8,13 @@ import { TemplatePage } from './pages/TemplatesPage';
 import { HomePage } from './pages/HomePage';
 import { LandingPage } from './pages/LandingPage';
 import { templates } from './templates/templates';
+import { Footer } from './components/Footer';
 import { PrivateRoute } from './PrivateRoute';
 
 function App() {
 	const { currentUser } = useContext(AuthContext);
 	return (
-		<>
+		<div>
 			<Navbar />
 			<BrowserRouter>
 				<Switch>
@@ -28,7 +29,8 @@ function App() {
 					</Route>
 				</Switch>
 			</BrowserRouter>
-		</>
+			<Footer />
+		</div>
 	);
 }
 
