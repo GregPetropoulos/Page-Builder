@@ -73,12 +73,12 @@ module.exports = {
 
   logoutUser: async (req, res) => {
     try {
-    req.session.destroy(err => {
-      if (err){
-        return res.redirect('/')
-      }
-      res.clearCookie(USER_SESSION)
-      res.redirect('/login')
+      req.session.destroy(err => {
+        if (err){
+          return res.redirect('/')
+        }
+        res.clearCookie(USER_SESSION)
+        res.redirect('/login')
     })
     console.log('USER LOGGED OUT')
     } catch (err){
@@ -87,5 +87,5 @@ module.exports = {
   // deleteUser: async (req,res) =>{
   //   const {email}
   // }
-},
+  },
 }

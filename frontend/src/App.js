@@ -14,6 +14,9 @@ import { PrivateRoute } from './PrivateRoute';
 
 function App() {
 	const { currentUser } = useContext(AuthContext);
+	console.log('current user', currentUser);
+	// console.log('props', this.props);
+	
 	return (
 		<div>
 			<Navbar />
@@ -29,7 +32,7 @@ function App() {
 						<TemplateEditor configs={templates} />
 					</PrivateRoute>
 					<Route path="/">
-						{!currentUser ? <LandingPage /> : <HomePage />}
+						{!currentUser ? <LandingPage /> : <HomePage/>}
 					</Route>
 				</Switch>
 			</BrowserRouter>

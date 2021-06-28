@@ -19,6 +19,7 @@ const ApiLogin = async userInfo => {
 const ApiLogOut= async userInfo => {
 	try {
 		const response = await axios.post(routes.logout(), userInfo);
+		console.log(response)
 		return response.data;
 	} catch (err) {
 		const error = err;

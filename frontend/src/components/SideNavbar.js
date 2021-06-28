@@ -6,14 +6,16 @@ import { Link, useHistory } from "react-router-dom";
 import accountService from "../services/account";
 
 export const SideNavbar = () => {
-const ApiLogOut = accountService.ApiLogOut
-    const history = useHistory();
+  const ApiLogOut = accountService.ApiLogOut
+  const history = useHistory();
   const [isLogin, setLogin] = useState(false);
+
   const handleClick = (e) => {
     console.log("handle check");
     e.preventDefault();
     setLogin(!isLogin);
-    ApiLogOut({email:'goodguy@gmail.com', password:'password1'});//hardcoded to see if it works on logout
+    ApiLogOut({email:'koaliasanders@gmail.com', password:'password'});//hardcoded to see if it works on logout
+    history.push('/', { noUser: true})
   };
 
   return (
@@ -49,7 +51,7 @@ const ApiLogOut = accountService.ApiLogOut
             <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
               <div className="flex items-center">
                 <Link
-                  to="/login"
+                  to="/"
                   className="inline-flex space-x-4 text-sm"
                   onClick={handleClick}
                 >

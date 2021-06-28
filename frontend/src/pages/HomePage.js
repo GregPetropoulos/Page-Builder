@@ -5,12 +5,12 @@ import { SideNavbar } from '../components/SideNavbar';
 export const HomePage = () => {
 	const { pages } = usePages();
 	return (
-		<div>
-			<div>
+		<div className="grid grid-cols-5 grid-rows-4 p-8 space-x-4">
+			<div className="col-span-1 row-span-4">
 				<SideNavbar/>
 			</div>
-			<div className="d-flex gap flex-wrap justify-content-center">
-				{pages.length > 0 ? (
+			<div className="">
+				{/* { pages.length > 0 ? (
 					pages.map(page => (
 						<PageCard
 							key={page._id}
@@ -26,8 +26,49 @@ export const HomePage = () => {
 							Create page
 						</a>
 					</div>
-				)}
+				)} */}
+					<PageCard
+							key={1}
+							id={1}
+							name='test'
+							thumbnail='bootstrap.png'
+						></PageCard>
+
 			</div>
+				<div className="">
+				Template 1 Placeholder
+			</div>
+			<div className="">
+				Template 2 Placeholder
+			</div>
+			<div className="">
+				Template 3 Placeholder
+			</div>
+			<div className="">
+				Template 4 Placeholder
+			</div>
+			<div className="">
+				Template 5 Placeholder
+			</div>
+			<div className="">
+				Template 6 Placeholder
+			</div>
+			<div className="">
+				Template 7 Placeholder
+			</div>
+			<div className="">
+				Template 8 Placeholder
+			</div>      
+			<div className="">
+				Template 9 Placeholder
+			</div>
+			<div className="">
+				Template 10 Placeholder
+			</div>
+			<div className="">
+				Template 11 Placeholder
+			</div>
+
 		</div>
 	);
 };
