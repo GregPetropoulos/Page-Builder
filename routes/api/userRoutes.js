@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../../controllers/userController");
+const redirectLogin= require('../../middleware/redirectLogin');
 
 // LOGIN PAGE CHECKS EMAIL,PASSWORD AGAINST USERID
 router.route("/login")
@@ -13,10 +14,11 @@ router.route("/register")
 
 // ---------------------
 // USER LOGOUT AND REDIRECT
-router.route("/logout")
+router.route("/logout", redirectLogin)
 .post(userController.logoutUser)
 
 // // will need a delete a user button and route
+
 // router.route("/login")
 // .delete(userController.deleteUser)
 // ---------------------

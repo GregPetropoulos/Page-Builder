@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react';
 import pagesService from '../services/pages';
 
-// const dummyPage = {
-// 	_id: 123,
-// 	name: "test page",
-// 	thumbnail: "logopb.png"
-// }
-
 
 export const usePages = () => {
 	const [pages, setPages] = useState([]);
