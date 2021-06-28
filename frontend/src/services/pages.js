@@ -7,7 +7,8 @@ const createPage = async (name, thumbnail, html) => {
 		html,
 	};
 	try {
-		await axios.post('/api/create', page, { withCredentials: true });
+		const response= await axios.post('/api/create', page, { withCredentials: true });
+console.log('RESPONSE',response)
 	} catch (err) {
 		console.log(err);
 	}
