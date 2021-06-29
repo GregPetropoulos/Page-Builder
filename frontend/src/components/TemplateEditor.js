@@ -50,11 +50,12 @@ export const TemplateEditor = ({ configs }) => {
 	const handleSave = async () => {
 		const html = templateRef.current.innerHTML;
 		const pageTitle = fields.filter(f => f.id === 'pageTitle');
-		await pagesService.createPage(
+		const response = await pagesService.createPage(
 			pageTitle.length > 0 ? pageTitle[0].value : config.name,
 			config.thumbnail,
 			html
 		);
+		console.log('response create:page', response)
 		history.push('/');
 	};
 

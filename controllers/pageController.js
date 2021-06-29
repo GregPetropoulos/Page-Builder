@@ -73,6 +73,8 @@ module.exports = {
       const { name, thumbnail, html } = req.body;
       const page = { name, thumbnail, html };
       const id = req.session.user;
+      console.log('PAGE TO SAVE', page)
+
       try {
         await db.updateOne(
           { _id: id },

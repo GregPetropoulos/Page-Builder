@@ -3,7 +3,7 @@ import { Draggable } from './Draggable';
 export const TemplatePanel = ({ fields, onChange, onSave }) => {
 	const xAxis = Math.floor(window.innerWidth / 2) - 200;
 	const yAxis = Math.floor(window.innerHeight / 2) - 200;
-
+	console.log('onSave', onSave)
 	const components = fields.map(field => {
 		switch (field.type) {
 			case 'text':
@@ -67,7 +67,7 @@ export const TemplatePanel = ({ fields, onChange, onSave }) => {
 			>
 				{components}
 				<button className="my-5 btn btn-primary" onClick={onSave}>
-					Submit
+					Submit ii
 				</button>
 			</div>
 		</Draggable>
