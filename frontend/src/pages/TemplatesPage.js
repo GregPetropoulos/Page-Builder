@@ -1,15 +1,15 @@
-import { TemplateCard } from "../components/TemplateCard";
-import { SideNavbar } from "../components/SideNavbar";
+import { TemplateCard } from '../components/TemplateCard';
+import { SideNavbar } from '../components/SideNavbar';
 
 export const TemplatePage = ({ configs }) => {
-  return (
+	return (
     <div>
       <div>
-        <SideNavbar />
+        <SideNavbar/>
       </div>
-
+      
       <div className="d-flex flex-row gap p-5 flex-wrap justify-content-center">
-        {configs.map((template) => (
+        {configs.map(template => (
           <TemplateCard
             key={template.id}
             thumbnail={template.thumbnail}
@@ -19,5 +19,5 @@ export const TemplatePage = ({ configs }) => {
         ))}
       </div>
     </div>
-  );
+	);
 };

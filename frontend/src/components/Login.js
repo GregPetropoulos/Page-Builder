@@ -21,6 +21,7 @@ export const Login = () => {
 			setError('Email or password too short');
 		}
 	};
+	
 	return (
 		<form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 h-full" onSubmit={handleSubmit}>
 			<h1 className="text-center font-black pb-2">LOGIN</h1>

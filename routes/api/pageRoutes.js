@@ -13,7 +13,7 @@ router.route('/one/:id')
 
 
 // CREATE A PAGE
-router.route('/create')
+router.route('/create/:id')
 .post (pageController.updateOne)
 
 // DOWNLOAD USER PAGE

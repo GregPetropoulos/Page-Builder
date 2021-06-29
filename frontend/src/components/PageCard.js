@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import pageServices from '../services/pages';
 
 export const PageCard = ({ thumbnail, name, id }) => {
 	const [thumbnailSrc, setThumbnailSrc] = useState("https://via.placeholder.com/200");
@@ -8,6 +9,11 @@ export const PageCard = ({ thumbnail, name, id }) => {
 			setThumbnailSrc(mod.default)
 		);
 	}, [thumbnail]);
+
+	const handleDownload = async () => {
+		const response = await pageServices.downloadPage()
+		console.log('download response', response)
+	}
 
 	return (
 		<div className="d-flex flex-column justify-content-between template-wrapper border p-2 rounded">
@@ -25,7 +31,7 @@ export const PageCard = ({ thumbnail, name, id }) => {
 					<a
 						className="btn btn-secondary"
 						href={`/page/${id}/download`}
-						download
+						onClick={handleDownload}
 					>
 						Download
 					</a>

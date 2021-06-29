@@ -73,19 +73,20 @@ module.exports = {
 
   logoutUser: async (req, res) => {
     try {
-    req.session.destroy(err => {
-      if (err){
-        return res.redirect('/')
-      }
-      res.clearCookie(USER_SESSION)
-      res.redirect('/login')
-    })
-    console.log('USER LOGGED OUT')
-    } catch (err){
+      req.session.destroy((err) => {
+        if (err) {
+          console.log("error", err);
+          return res.send({ error: err });
+        }
+        res.clearCookie("user.session");
+        res.send({ message: "logged out" });
+      });
+      console.log("USER LOGGED OUT");
+    } catch (err) {
       res.sendStatus(404);
     }
-  // deleteUser: async (req,res) =>{
-  //   const {email}
-  // }
-},
-}
+    // deleteUser: async (req,res) =>{
+    //   const {email}
+    // }
+  },
+};

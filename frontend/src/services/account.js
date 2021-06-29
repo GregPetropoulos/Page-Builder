@@ -1,4 +1,4 @@
-import { routes } from './routes.js';
+import { routes } from './routes';
 import axios from 'axios';
 
 const ApiLogin = async userInfo => {
@@ -19,6 +19,7 @@ const ApiLogin = async userInfo => {
 const ApiLogOut= async userInfo => {
 	try {
 		const response = await axios.post(routes.logout(), userInfo);
+		console.log('logout response', response)
 		return response.data;
 	} catch (err) {
 		const error = err;

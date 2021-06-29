@@ -7,6 +7,7 @@ import { TemplateEditor } from './components/TemplateEditor';
 import { TemplatePage } from './pages/TemplatesPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { HomePage } from './pages/HomePage';
+import { PageView } from './pages/PageView';
 import { LandingPage } from './pages/LandingPage';
 import { templates } from './templates/templates';
 import { Footer } from './components/Footer';
@@ -27,6 +28,9 @@ function App() {
 					</PrivateRoute> */}
 					<PrivateRoute path="/create/:id">
 						<TemplateEditor configs={templates} />
+					</PrivateRoute>
+					<PrivateRoute path="/page/:id">
+						<PageView/>
 					</PrivateRoute>
 					<Route path="/">
 						{!currentUser ? <LandingPage /> : <HomePage />}
