@@ -6,4 +6,7 @@ const pageRoutes = require ('./pageRoutes');
 router.use('/users', userRoutes);
 router.use('/page', pageRoutes);
 
+router.get('/test', (req, res) => {
+    res.send({yes: true})
+})
 module.exports = router;

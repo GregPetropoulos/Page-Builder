@@ -5,16 +5,20 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import accountService from "../services/account";
 
-export const SideNavbar = () => {
+export const SideNavbar = (props) => {
   const ApiLogOut = accountService.ApiLogOut
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
 
+  console.log('current user11', props)
+  const { email, password } = props.currentUser
   const handleClick = (e) => {
     console.log("handle check");
     e.preventDefault();
     setLogin(!isLogin);
-    ApiLogOut({email:'koaliasanders@gmail.com', password:'password'});//hardcoded to see if it works on logout
+    // ApiLogOut({email:'koko@email.com', password:'password1'}); //hardcoded to see if it works on logout
+    ApiLogOut({email, password})
+    props.signOut()
     history.push('/', { noUser: true})
   };
 

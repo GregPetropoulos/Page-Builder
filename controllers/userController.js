@@ -79,6 +79,7 @@ module.exports = {
           return res.send({ error: err });
         }
         res.clearCookie("user.session");
+        res.
         res.send({ message: "logged out" });
       });
       console.log("USER LOGGED OUT");

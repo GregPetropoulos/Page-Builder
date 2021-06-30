@@ -14,9 +14,9 @@ import { Footer } from './components/Footer';
 import { PrivateRoute } from './PrivateRoute';
 
 function App() {
-	const { currentUser } = useContext(AuthContext);
+	const { currentUser, signOut } = useContext(AuthContext);
 	console.log('current user', currentUser);
-	// console.log('props', this.props);
+	console.log('sign out', signOut)
 	
 	return (
 		<div>
@@ -36,7 +36,9 @@ function App() {
 						<PageView/>
 					</PrivateRoute>
 					<Route path="/">
-						{!currentUser ? <LandingPage /> : <HomePage/>}
+						{/* <HomePage currentUserProp={currentUser}/> */}
+						{/* <LandingPage />  */}
+						{ !currentUser ? <LandingPage /> : <HomePage currentUserProp={currentUser} signOutFunc={signOut}/> }
 					</Route>
 				</Switch>
 			</BrowserRouter>

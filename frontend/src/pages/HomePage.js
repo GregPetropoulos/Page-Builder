@@ -2,12 +2,13 @@ import { usePages } from '../hooks/usePages';
 import { PageCard } from '../components/PageCard';
 import { SideNavbar } from '../components/SideNavbar';
 
-export const HomePage = () => {
+export const HomePage = (props) => {
 	const { pages } = usePages();
+	console.log('props', props)
 	return (
 		<div className="grid grid-cols-5 grid-rows-4 p-8 space-x-4">
 			<div className="col-span-1 row-span-4">
-				<SideNavbar/>
+				<SideNavbar currentUser={props.currentUserProp} signOut={props.signOutFunc}/>
 			</div>
 			<div className="">
 				{/* { pages.length > 0 ? (
