@@ -55,9 +55,9 @@ module.exports = {
       const name = page.name;
       const fileContents = Buffer.from(html);
       const readStream = new stream.PassThrough();
-
+      console.log('fileContents', fileContents)
       readStream.end(fileContents);
-
+      
       res.set("Content-disposition", "attachment; filename=" + `${name}.html`);
       res.set("Content-Type", "text/plain");
 
@@ -73,6 +73,8 @@ module.exports = {
       const { name, thumbnail, html } = req.body;
       const page = { name, thumbnail, html };
       const id = req.session.user;
+      console.log('PAGE TO SAVE', page)
+
       try {
         await db.updateOne(
           { _id: id },

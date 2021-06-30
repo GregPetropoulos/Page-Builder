@@ -1,5 +1,5 @@
-import { TemplateCard } from "../components/TemplateCard";
-import { SideNavbar } from "../components/SideNavbar";
+import { TemplateCard } from '../components/TemplateCard';
+import { SideNavbar } from '../components/SideNavbar';
 
 export const TemplatePage = ({ configs }) => {
   return (
@@ -19,5 +19,5 @@ export const TemplatePage = ({ configs }) => {
         ))}
       </div>
     </div>
-  );
+	);
 };

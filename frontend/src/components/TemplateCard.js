@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import pageService from '../services/pages';
 
 export const TemplateCard = ({ thumbnail, name, id }) => {
 	const history = useHistory();
@@ -10,6 +11,23 @@ export const TemplateCard = ({ thumbnail, name, id }) => {
 			setThumbnailSrc(mod.default)
 		);
 	}, [thumbnail]);
+
+	// const handleSubmit = async ev => {
+	// 	ev.preventDefault();
+	// 	const [emailInput, passwordInput] = ev.target.elements;
+	// 	const email = emailInput.value;
+	// 	const password = passwordInput.value;
+	// 	if (email.length > 0 && password.length > 0) {
+	// 		const userInfo = await accountService.ApiLogin({ email, password });
+	// 		if (userInfo.error) {
+	// 			setError(userInfo.error);
+	// 		} else {
+	// 			auth(userInfo);
+	// 		}
+	// 	} else {
+	// 		setError('Email or password too short');
+	// 	}
+	// };
 
 	return (
 		<div
