@@ -1,11 +1,12 @@
 import { TemplateCard } from '../components/TemplateCard';
 import { SideNavbar } from '../components/SideNavbar';
 
-export const TemplatePage = ({ configs }) => {
+export const TemplatePage = ({ configs, currentUserProp, signOutFunc }) => {
+
   return (
     <div className="grid grid-cols-5 grid-rows-1 p-8 space-x-4">
       <div className="row-span-1">
-        <SideNavbar />
+        <SideNavbar currentUser={currentUserProp} signOut={signOutFunc} />
       </div>
 
       <div className="flex flex-row gap p-5 flex-wrap justify-content-center row-span-1">
