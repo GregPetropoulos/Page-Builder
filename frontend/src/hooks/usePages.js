@@ -6,7 +6,7 @@ export const usePages = () => {
 	const [pages, setPages] = useState([]);
 	useEffect(() => {
 		pagesService.fetchPages().then(data => {
-			console.log(data);
+			console.log('fetch pages data',data);
 			setPages(data.pages)
 		});
 	}, []);

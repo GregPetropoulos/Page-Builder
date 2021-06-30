@@ -2,50 +2,37 @@ import logopb from '../images/logopb.png';
 
 export const Navbar = () => {
 	return (
-<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-blue-500 mb-3">
-  <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-    <div className="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-      <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="#pablo">
-      <img src={logopb} alt="logopb" className="object-scale-down"/>
-      </a>
-      <button className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button">
-        <span className="block relative w-6 h-px rounded-sm bg-white"></span>
-        <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-        <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-      </button>
-    </div>
-    <div className="lg:flex flex-grow items-center" id="example-navbar-warning">
-      <ul className="flex flex-col lg:flex-row list-none mr-auto">
-        <li className="nav-item">
-          <a className="px-3 py-2 flex items-center text-xs uppercase font-black leading-snug text-white hover:opacity-75" href="/">
-          Home
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="px-3 py-2 flex items-center text-xs uppercase font-black leading-snug text-white hover:opacity-75" href="/templates">
-             <span className="ml-2">Templates</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="px-3 py-2 flex items-center text-xs uppercase font-black leading-snug text-white hover:opacity-75" href="/snippets">
-            <span className="ml-2">Snippets</span>
-          </a>
-        </li>
-		<li className="nav-item">
-          <a className="px-3 py-2 flex items-center text-xs uppercase font-black leading-snug text-white hover:opacity-75" href="/projects">
-            <span className="ml-2">Projects</span>
-          </a>
-        </li>
-      </ul>
-      <div className="relative flex w-full sm:w-7/12 md:w-5/12 px-4 flex-wrap items-stretch lg:ml-auto">
-        <div className="flex">
-          <span className="font-normal leading-snug flex text-center white-space-no-wrap border border-solid border-blue-600 rounded-full text-sm bg-white items-center rounded-r-none pl-2 py-1 text-blue-800 border-r-0 placeholder-blueGray-300">
-          </span>
-        </div>
-        <input type="text" className="px-2 py-1 h-8 border border-solid  border-blue-600 rounded-full text-sm leading-snug text-blue-700 bg-white shadow-none outline-none focus:outline-none w-full font-normal rounded-l-none flex-1 border-l-0 placeholder-blueGray-300" placeholder="Search" />
+<div className="p-3">
+<div className="flex flex-wrap navbar mb-2 shadow-lg bg-gray-800 text-neutral-content rounded-xl">
+    <div className="flex-none px-2 mx-2 align-middle">
+      <span className="text-lg font-bold">
+      <img src={logopb} alt="logopb" className="w-20 h-20"/> 
+      </span>
+    </div> 
+    <div className="flex">
+      <div className="items-stretch hidden lg:flex content-center">
+        <a className="flex items-center align-middle text-sm uppercase text-indigo-50 font-black" href="/">
+                Home
+              </a> 
+        <a className="btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black" href="/templates">
+                Templates
+              </a> 
+        <a className="btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black" href="/snippets">
+                Snippets
+              </a> 
+        <a className="btn btn-ghost btn-sm rounded-btnpx-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black" href="/projects">
+                Projects
+              </a>
       </div>
+    </div> 
+  <div className="flex float-right">
+    <div className="avatar">
+      <div className="rounded-xl">
+        <img src="https://i.pravatar.cc/500?img=32" className="rounded-full w-10 h-10 m-1 float-right"/>
+      </div> 
     </div>
   </div>
-</nav>
+</div>
+</div>
 	);
 };
