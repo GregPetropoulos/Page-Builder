@@ -15,8 +15,6 @@ import { PrivateRoute } from './PrivateRoute';
 
 function App() {
 	const { currentUser, signOut } = useContext(AuthContext);
-	console.log('current user', currentUser);
-	console.log('sign out', signOut)
 	
 	return (
 		<div>
@@ -36,8 +34,6 @@ function App() {
 						<PageView/>
 					</PrivateRoute>
 					<Route path="/">
-						{/* <HomePage currentUserProp={currentUser}/> */}
-						{/* <LandingPage />  */}
 						{ !currentUser ? <LandingPage /> : <HomePage currentUserProp={currentUser} signOutFunc={signOut}/> }
 					</Route>
 				</Switch>

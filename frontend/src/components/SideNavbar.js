@@ -13,17 +13,14 @@ export const SideNavbar = (props) => {
   console.log('current user11', props)
   const { email, password } = props.currentUser
   const handleClick = (e) => {
-    console.log("handle check");
     e.preventDefault();
     setLogin(!isLogin);
-    // ApiLogOut({email:'koko@email.com', password:'password1'}); //hardcoded to see if it works on logout
     ApiLogOut({email, password})
     props.signOut()
     history.push('/', { noUser: true})
   };
 
   return (
-    //<div className="flex">
     <div className="flex flex-wrap">
       {/* Sidebar starts */}
       <div className="w-64 absolute lg:relative bg-white shadow h-screen flex-col justify-between hidden lg:flex pb-12">
