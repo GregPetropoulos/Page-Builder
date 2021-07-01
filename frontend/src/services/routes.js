@@ -4,6 +4,7 @@ export const routes = {
 	register: () => `api/users/register`,
 	logout: () => `api/users/logout`,
 
+
 	//page routes
 	fetchPages: () => `/api/page/pages`,
 	viewPage: (id) => `/api/page/one/${id}`,
