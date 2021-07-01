@@ -1,5 +1,5 @@
 export const routes = {
-	//user rouets
+	//user routes
 	login: () => `api/users/login`,
 	register: () => `api/users/register`,
 	logout: () => `api/users/logout`,

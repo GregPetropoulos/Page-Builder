@@ -10,7 +10,12 @@ export const ProfilePage = ({ currentUserProp, signOutFunc }) => {
             <SideNavbar currentUser={currentUserProp} signOut={signOutFunc} />
         </div>
         <div className="col-span-4 row-span-1">
-            <ProfileForm />
+            <ProfileForm 
+            firstName={''}
+            lastName={''}
+            about={''}
+            github={''}
+            />
         </div>
     </div>
     );

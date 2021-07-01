@@ -3,18 +3,18 @@ import { Link, useHistory } from "react-router-dom";
 import accountService from "../services/account";
 
 export const SideNavbar = (props) => {
-  const ApiLogOut = accountService.ApiLogOut
+  const ApiLogOut = accountService.ApiLogOut;
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
-  const { email, password } = props.currentUser
+  const { email, password } = props.currentUser;
   const handleClick = (e) => {
     e.preventDefault();
     setLogin(!isLogin);
 
     if (email) {
-      ApiLogOut({email, password})
-      props.signOut()
-      history.push('/', { noUser: true})
+      ApiLogOut({ email, password });
+      props.signOut();
+      history.push("/", { noUser: true });
     }
   };
 
@@ -29,22 +29,30 @@ export const SideNavbar = (props) => {
                 {/* { props.name === "Page" ?
                                             (<Link to="/newpage"><span className="text-sm">New {props.name}</span></Link>):
                                         (<Link to="/newproject"><span className="text-sm">New {props.name}</span></Link>)} */}
-                <span className="text-sm uppercase text-indigo-50 font-black"> New Page </span>
+                <span className="text-sm uppercase text-indigo-50 font-black">
+                  New Page
+                </span>
               </div>
             </li>
             <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
               <div className="flex items-center">
-                <span className="text-sm uppercase text-indigo-50 font-black">Your Pages </span>
+                <span className="text-sm uppercase text-indigo-50 font-black">
+                  Your Pages
+                </span>
               </div>
             </li>
             <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
               <div className="flex items-center">
-                <span className="text-sm uppercase text-indigo-50 font-black"> Share</span>
+                <span className="text-sm uppercase text-indigo-50 font-black">
+                  Share
+                </span>
               </div>
             </li>
             <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
               <div className="flex items-center">
-                <span className="text-sm uppercase text-indigo-50 font-black"> Trash</span>
+                <span className="text-sm uppercase text-indigo-50 font-black">
+                  Trash
+                </span>
               </div>
             </li>
             <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
@@ -56,18 +64,6 @@ export const SideNavbar = (props) => {
                 >
                   Logout
                 </Link>
-              </div>
-            </li>
-            <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
-              <div className="flex items-center">
-                <span className="text-sm uppercase text-indigo-50 font-black"> 
-                  <Link
-                    to="/profilepage"
-                    className="text-sm uppercase text-indigo-50 font-black"
-                  >
-                    Profile
-                  </Link>
-                </span>
               </div>
             </li>
           </ul>
