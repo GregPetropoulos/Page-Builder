@@ -14,7 +14,7 @@ router.route("/register")
 
 // ---------------------
 // USER LOGOUT AND REDIRECT
-router.route("/logout", redirectLogin)
+router.route("/logout")
 .post(userController.logoutUser)
 
 // // will need a delete a user button and route
@@ -23,5 +23,7 @@ router.route("/logout", redirectLogin)
 // .delete(userController.deleteUser)
 // ---------------------
 
+router.route('/:id/profile')
+.post(userController.profileFormInput)
 
 module.exports = router;

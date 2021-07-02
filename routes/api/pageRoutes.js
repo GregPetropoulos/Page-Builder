@@ -7,7 +7,7 @@ const pageController = require("../../controllers/pageController");
 router.get("/pages", pageController.findAllPages)
 
 // FIND USERS CORRESPONDING PAGE ID
-//: The route was too similiar to the above get request changed to "/one/:id/""
+//: The route was too similar to the above get request changed to "/one/:id/""
 router.route('/one/:id')
 .get(pageController.findIdPage)
 

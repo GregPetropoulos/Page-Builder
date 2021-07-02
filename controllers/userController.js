@@ -53,23 +53,6 @@ module.exports = {
       });
     }
   },
-  // logoutUser: async (req, res) => {
-  //   const { email } = req.body;
-  //   const user = await db.findOne({
-  //     email,
-  //   });
-  //   try {
-  //     if (user) {
-  //       req.logout();
-  //       res.status(200).json({ msg: "LOGGED OUT" });
-  //     } else {
-  //       res.status(404).json({ msg: "NO USER TO LOGOUT" });
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //     res.status(404);
-  //   }
-  // },
 
   logoutUser: async (req, res) => {
     try {
@@ -79,7 +62,6 @@ module.exports = {
           return res.send({ error: err });
         }
         res.clearCookie("user.session");
-        res.
         res.send({ message: "logged out" });
       });
       console.log("USER LOGGED OUT");
@@ -90,4 +72,28 @@ module.exports = {
     //   const {email}
     // }
   },
-};
+  profileFormInput: async (req, res) => {
+    const {firstName, lastName, about, github}=req.body
+    // profileInput={}
+    try { 
+      const profileInput = {
+        firstName,
+        lastName,
+        about,
+        github,
+      }
+      console.log('profile stuff',profileInput)
+      console.log('new db stuff',databaseProfile)
+      // stuck here cant see new database profile after post request
+      // localhost:3002/api/users/60df3f804d16f43f24ec21b4/profile
+
+      
+      const databaseProfile= new db(profileInput);
+      await databaseProfile.save()
+      res.send(profileInput);
+      
+    }catch(err) {
+      res.sendStatus(404)
+    }
+  },
+}

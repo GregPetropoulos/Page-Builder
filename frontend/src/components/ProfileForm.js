@@ -1,18 +1,36 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+
+
+// https://blog.logrocket.com/forms-in-react-in-2020/
+// As it turns out, the browser handles form state internally by default, 
+// and we can leverage that to simplify our code!
+
+// https://mattboldt.com/2020/05/02/formdata-with-react-hooks-and-fetch/
 
 export const ProfileForm = ({firstName, lastName, about, github}) => {
+  const[ profile, setProfile]=useState({firstName, lastName, about, github})
   let form = useRef(null);
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const form_data = new FormData(form.current);
-    // let profileInfo = {};
-    const [firstName,lastName, about ] = event.target.elements;
-		const firstNameValue = firstName.value;
-		const lastNameValue = lastName.value;
-		const aboutValue = about.value;
-console.log(firstNameValue);
-console.log(lastNameValue);
-console.log(aboutValue);
+    const data = new FormData(form.current);
+     fetch('/api/user/:id/profile', {
+       method: 'POST',
+       body: data,
+     })
+     .then(res => res.json())
+     .then(json => setProfile(json.profile))
+     
+     
+     console.log(data);
+     console.log(profile);
+
+//--------
+//     const [firstName,lastName, about ] = event.target.elements;
+// 		const firstNameValue = firstName.value;
+// 		const lastNameValue = lastName.value;
+// 		const aboutValue = about.value;
+//    console.log(lastNameValue);
+//    console.log(aboutValue);
 
 
 
@@ -23,10 +41,10 @@ console.log(aboutValue);
     // console.log("profileInfo", profileInfo);
     // Place your API call here to submit your payload.
     // console.log('hello-form', form_data)
-    console.log(event.target.elements)
+    // console.log(event.target.elements)
   };
   return (
-    <form id="form" onSubmit={handleSubmit}>
+    <form ref= {form} id="form" onSubmit={handleSubmit}>
       <div className="bg-white dark:bg-gray-800">
         <div className="container mx-auto bg-white dark:bg-gray-800 rounded">
           <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800">
@@ -64,7 +82,8 @@ console.log(aboutValue);
                     <input
                       type="text"
                       id="FirstName"
-                      name="firstName"
+                      name="profile[firstName]"
+                      defaultValue={profile.firstName}
                       className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400"
                     />
                   </div>
@@ -78,7 +97,8 @@ console.log(aboutValue);
                     <input
                       type="text"
                       id="LastName"
-                      name="lastName"
+                      name="profile[lastName]"
+                      defaultValue={profile.lastName}
                       className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400"
 
                     />
@@ -94,11 +114,11 @@ console.log(aboutValue);
                 </label>
                 <textarea
                   id="about"
-                  name="about"
+                  name="profile[about]"
+                  defaultValue={profile.about}
                   className="bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
                   placeholder="Let the world know who you are"
                   rows={5}
-                  defaultValue={""}
                 />
                 <p className="w-full text-right text-xs pt-1 text-gray-500 dark:text-gray-400">
                   Character Limit: 200
