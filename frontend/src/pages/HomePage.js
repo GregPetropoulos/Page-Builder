@@ -10,7 +10,7 @@ export const HomePage = (props) => {
 				<SideNavbar currentUser={props.currentUserProp} signOut={props.signOutFunc}/>
 			</div>
 			<div className="">
-				{ pages.length > 0 ? (
+				{ Array.isArray(pages) && pages.length > 0 ? (
 					pages.map(page => (
 						<PageCard
 							key={page._id}
@@ -26,7 +26,7 @@ export const HomePage = (props) => {
 							Create page
 						</a>
 					</div>
-				)}
+				)} 
 			</div>
 		</div>
 	);
