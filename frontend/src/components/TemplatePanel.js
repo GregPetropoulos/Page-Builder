@@ -57,9 +57,9 @@ export const TemplatePanel = ({ fields, onChange, onSave }) => {
 	return (
 		<Draggable
 			position={{ x: xAxis, y: yAxis }}
-			className="d-flex flex-column input-wrapper p-3  bg-dark text-white rounded border"
+			className="flex-wrap grid-cols-1 px-3 py-2 bg-indigo-700 text-white rounded-lg"
 		>
-			<h2 className="mb-3 border-bottom">Editor</h2>
+			<h2 className="col-span-1 text-center underline">Editor</h2>
 			<div
 				className="d-flex flex-column"
 				style={{ cursor: 'default' }}
@@ -67,7 +67,7 @@ export const TemplatePanel = ({ fields, onChange, onSave }) => {
 			>
 				{components}
 				<button className="my-5 btn btn-primary" onClick={onSave}>
-					Submit ii
+					Submit
 				</button>
 			</div>
 		</Draggable>

@@ -5,10 +5,15 @@ export const Template1 = (
 		pageTitle,
 		pageLogoTitle,
 		landingTitle,
+		navItem1,
+		navItem2,
+		navItem3,
 		landingText,
+		landingText2,
 		backgroundColor,
 		buttonText,
 		imageDropdown,
+		footerText,
 	},
 	ref
 ) => {
@@ -38,17 +43,17 @@ export const Template1 = (
 				style={{ backgroundColor }}
 			>
 				<header>
-					<div className=" d-flex justify-content-between my-2">
-						<h3 className="masthead-brand">{pageLogoTitle}</h3>
-						<nav className="nav justify-content-center">
-							<a className="nav-link active" href="#">
-								Home
+					<div class=" d-flex justify-content-between my-2">
+						<h3 class="masthead-brand">{pageLogoTitle}</h3>
+						<nav class="nav justify-content-center">
+							<a class="nav-link active" href="#">
+								{navItem1}
 							</a>
-							<a className="nav-link" href="#">
-								Features
+							<a class="nav-link" href="#">
+								{navItem2}
 							</a>
-							<a className="nav-link" href="#">
-								Contact
+							<a class="nav-link" href="#">
+								{navItem3}
 							</a>
 						</nav>
 					</div>
@@ -64,16 +69,17 @@ export const Template1 = (
 							style={{ width: 300 }}
 						/>
 					</div>
-					<p className="d-flex justify-content-center">
-						<a href="#" className="btn btn-lg btn-secondary">
+					<p class="fs-5"> {landingText2} </p>
+					<p class="d-flex justify-content-center">
+						<a href="#" class="btn btn-lg btn-secondary">
 							{buttonText}
 						</a>
 					</p>
 				</main>
 
-				<footer className="d-flex justify-content-center">
-					<div className="inner">
-						<p>Cover template </p>
+				<footer class="d-flex justify-content-center">
+					<div class="inner">
+						<p> {footerText} </p>
 					</div>
 				</footer>
 			</div>
