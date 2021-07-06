@@ -25,7 +25,7 @@ export const templates = [
 	{
 		id: 2,
 		thumbnail: 'cover.png',
-		name: 'Cover Template',
+		name: 'Landing Page Template',
 		fields: [
 			{
 				id: 'pageTitle',
@@ -72,7 +72,7 @@ export const templates = [
 			{
 				id: 'backgroundColor',
 				name: 'Background Color',
-				value: '#777',
+				value: '#444',
 				type: 'color',
 			},
 			{
@@ -94,6 +94,18 @@ export const templates = [
 				'nature1.jpg', 'notebook.jpg', 'room.jpg', 'royalbuilding.jpg', 'scenery.jpg', 'scenery2.jpg', 'scenery3.jpg', 'scenery5.jpg', 'spices.jpg',
 				'statues.jpg', 'videoedit.jpg', 'waterfall.jpg', 'watermountains.jpg', 'wedding.jpg', 'whereIwanttobe.jpg', 'workandcoffee.jpg'],
 				type: 'dropdown',
+			},
+			{
+				id: 'landingText2',
+				name: 'Landing Text 2',
+				value: 'This is the second paragraph of your landing page. You are allowed to type out your thooughts here if you need extra space or simply ignore this area. The freedom to choose is yours.',
+				type: 'text',
+			},
+			{
+				id: 'footerText',
+				name: 'footer',
+				value: 'Footer Inc. ©',
+				type: 'text',
 			},
 		],
 		component: Template1,

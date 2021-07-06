@@ -9,9 +9,11 @@ export const Template1 = (
 		navItem2,
 		navItem3,
 		landingText,
+		landingText2,
 		backgroundColor,
 		buttonText,
 		imageDropdown,
+		footerText,
 	},
 	ref
 ) => {
@@ -67,6 +69,7 @@ export const Template1 = (
 							style={{ width: 300 }}
 						/>
 					</div>
+					<p class="fs-5"> {landingText2} </p>
 					<p class="d-flex justify-content-center">
 						<a href="#" class="btn btn-lg btn-secondary">
 							{buttonText}
@@ -76,7 +79,7 @@ export const Template1 = (
 
 				<footer class="d-flex justify-content-center">
 					<div class="inner">
-						<p>Template Footer</p>
+						<p> {footerText} </p>
 					</div>
 				</footer>
 			</div>
