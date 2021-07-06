@@ -7,7 +7,7 @@ export const routes = {
 
 	//page routes
 	fetchPages: () => `/api/page/pages`,
-	viewPage: (id) => `/api/page/one/${id}`,
+	viewPage: id => `/api/page/one/${id}`,
 	createPage: () => `/api/page/create/60d4430eb6c160b2a5b26c5a`,
-	download: () => `/api/page/60da6a107866aa6a7f87c108/download`
+	download: id => `/api/page/${id}/download`
 };

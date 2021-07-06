@@ -25,12 +25,11 @@ const viewPage = async id => {
 	const response = await axios.get(routes.viewPage(id), { withCredentials: true });
 	console.log('sss', response)
 	return response.data
-	// window.location.reload();
 };
 
 const downloadPage = async id => {
-	// await axios.get(`/page/${id}/download`, { withCredentials: true });
-	await axios.get(routes.download(), { withCredentials: true });
+	console.log('downloadPage id', id)
+	return await axios.get(routes.download(id), { withCredentials: true });
 };
 
 const pagesService = {
