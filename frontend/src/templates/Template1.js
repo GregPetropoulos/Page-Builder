@@ -5,6 +5,9 @@ export const Template1 = (
 		pageTitle,
 		pageLogoTitle,
 		landingTitle,
+		navItem1,
+		navItem2,
+		navItem3,
 		landingText,
 		backgroundColor,
 		buttonText,
@@ -42,13 +45,13 @@ export const Template1 = (
 						<h3 class="masthead-brand">{pageLogoTitle}</h3>
 						<nav class="nav justify-content-center">
 							<a class="nav-link active" href="#">
-								Home
+								{navItem1}
 							</a>
 							<a class="nav-link" href="#">
-								Features
+								{navItem2}
 							</a>
 							<a class="nav-link" href="#">
-								Contact
+								{navItem3}
 							</a>
 						</nav>
 					</div>
@@ -73,7 +76,7 @@ export const Template1 = (
 
 				<footer class="d-flex justify-content-center">
 					<div class="inner">
-						<p>Cover template </p>
+						<p>Template Footer</p>
 					</div>
 				</footer>
 			</div>
