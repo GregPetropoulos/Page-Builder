@@ -15,13 +15,14 @@ const User = new Schema({
   username: {
     type: String,
     required: [true,'Please enter a username'],
-    unique: true,
   },
-
-  about: String,
+  
+profile: {
   firstName: String,
   lastName: String,
+  about: String,
   github: String,
+},
 
   pages: [
     {

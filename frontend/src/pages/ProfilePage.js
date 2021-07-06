@@ -11,10 +11,10 @@ export const ProfilePage = ({ currentUserProp, signOutFunc }) => {
         </div>
         <div className="col-span-4 row-span-1">
             <ProfileForm 
-            firstName={''}
-            lastName={''}
-            about={''}
-            github={''}
+            firstName=''
+            lastName=''
+            about=''
+            github=''
             />
         </div>
     </div>
