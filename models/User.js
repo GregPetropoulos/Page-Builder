@@ -14,7 +14,7 @@ const User = new Schema({
 
   username: {
     type: String,
-    required: [false,'Please enter a username'],
+    required: [true,'Please enter a username'],
   },
   
 profile: {

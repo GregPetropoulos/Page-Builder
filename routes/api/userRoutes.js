@@ -19,9 +19,9 @@ router.route("/logout")
 
 // // will need a delete a user button and route
 
-// router.route("/login")
-// .delete(userController.deleteUser)
-// ---------------------
+router.route("/:id/delete")
+.delete(userController.deleteUser)
+
 
 router.route('/:id/profile')
 .post(userController.profileFormInput)
