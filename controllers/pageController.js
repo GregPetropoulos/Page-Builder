@@ -1,9 +1,8 @@
 const db = require("../models/User");
-const stream = require("stream");
 const privateRoute = require("../middleware/privateRoute");
-var fs = require('fs');
-var path = require('path');
-var appDir = path.dirname(require.main.filename);
+const fs = require('fs');
+const path = require('path');
+const appDir = path.dirname(require.main.filename);
 
 // Defining methods for the pageController
 module.exports = {
@@ -56,31 +55,13 @@ module.exports = {
       const page = user.pages[0];
       const html = page.html;
       const name = page.name;
-      // const fileContents = Buffer.from(html);
-      // const readStream = new stream.PassThrough();
-      // console.log('fileContents', fileContents)
-      // console.log('name', name)
-      // readStream.end(fileContents);
-      
-      // res.set("Content-disposition", "attachment; filename=" + `${name}.html`);
-      // res.set("Content-Type", "text/plain");
-      // fs.unlink(`${name}.html`)
-      fs.appendFile(`${name}.html`, html, function (err) {
+      fs.writeFile(`${name}.html`, html, function (err) {
         if (err) throw err;
-        console.log('Saved!');
         var filePath = path.join(appDir, `${name}.html`);
         res.setHeader('Content-Disposition', 'attachment; filename=' + `${name}.html`);
-        // res.setHeader('Content-Transfer-Encoding', 'binary');
         res.setHeader('Content-Type', 'text/plain');
-
-        // res.sendFile(path.join(appDir, `${name}.html`))
         res.download(filePath, `${name}.html`)
-        console.log('downloaded')
-        // res.attachment(`${name}.html`);
-        // res.end('Downloaded', 'UTF-8')
       });
-      
-      // return readStream.pipe(res);
     } catch (err) {
       console.log(err);
       res.status(401);
