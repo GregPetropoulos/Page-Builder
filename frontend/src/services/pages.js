@@ -8,8 +8,7 @@ const createPage = async (name, thumbnail, html) => {
 		html,
 	};
 	try {
-		const response= await axios.post(routes.createPage(), page, { withCredentials: true });
-		console.log('RESPONSE API',response)
+		await axios.post(routes.createPage(), page, { withCredentials: true });
 	} catch (err) {
 		console.log(err);
 	}
@@ -17,19 +16,20 @@ const createPage = async (name, thumbnail, html) => {
 
 const fetchPages = async () => {
 	const response = await axios.get(routes.fetchPages(), { withCredentials: true });
-	console.log('response', response)
 	return response.data;
 	
 };
 
 const viewPage = async id => {
-	await axios.get(`/page/${id}`, { withCredentials: true });
-	// window.location.reload();
+	console.log('ID', id)
+	const response = await axios.get(routes.viewPage(id), { withCredentials: true });
+	console.log('sss', response)
+	return response.data
 };
 
 const downloadPage = async id => {
-	// await axios.get(`/page/${id}/download`, { withCredentials: true });
-	await axios.get(routes.download(), { withCredentials: true });
+	console.log('downloadPage id', id)
+	return await axios.get(routes.download(id), { withCredentials: true });
 };
 
 const pagesService = {

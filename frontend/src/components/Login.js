@@ -1,9 +1,12 @@
 import { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { UserContext } from '../context/UserContext';
+
 import accountService from '../services/account';
 
 export const Login = () => {
 	const { auth } = useContext(AuthContext);
+	const { setUserEmail} = useContext(UserContext);
 	const [error, setError] = useState('');
 	const handleSubmit = async ev => {
 		ev.preventDefault();
@@ -15,6 +18,7 @@ export const Login = () => {
 			if (userInfo.error) {
 				setError(userInfo.error);
 			} else {
+				setUserEmail(email)
 				auth(userInfo);
 			}
 		} else {

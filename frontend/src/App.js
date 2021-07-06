@@ -32,7 +32,7 @@ function App() {
 						<TemplateEditor configs={templates} currentUserProp={currentUser} signOutFunc={signOut} />
 					</PrivateRoute>
 					<PrivateRoute path="/page/:id">
-						<PageView/>
+						<PageView currentUserProp={currentUser} signOutFunc={signOut}/>
 					</PrivateRoute>
 					<PrivateRoute path="/profilepage">
 						<ProfilePage currentUserProp={currentUser} signOutFunc={signOut}/>

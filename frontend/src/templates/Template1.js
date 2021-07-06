@@ -39,7 +39,7 @@ export const Template1 = (
 				}}
 			/>
 			<div
-				class="cover-container d-flex h-100 p-3 mx-auto flex-column text-white screen align-content-center"
+				className="cover-container d-flex h-100 p-3 mx-auto flex-column text-white screen align-content-center"
 				style={{ backgroundColor }}
 			>
 				<header>
@@ -59,10 +59,10 @@ export const Template1 = (
 					</div>
 				</header>
 
-				<main role="main" class="mx-auto container my-auto">
-					<h1 class="fs-2 text-center mb-4">{landingTitle}</h1>
-					<p class="fs-5">{landingText}</p>
-					<div className="d-flex justify-content-center my-5">
+				<main role="main" className="mx-auto container my-auto">
+					<h1 className="fs-2 text-center mb-4">{landingTitle}</h1>
+					<p className="fs-5">{landingText}</p>
+					<div classNameName="d-flex justify-content-center my-5">
 						<img
 							src={thumbnailSrc}
 							alt="img"
