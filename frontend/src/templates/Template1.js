@@ -34,45 +34,45 @@ export const Template1 = (
 				}}
 			/>
 			<div
-				class="cover-container d-flex h-100 p-3 mx-auto flex-column text-white screen align-content-center"
+				className="cover-container d-flex h-100 p-3 mx-auto flex-column text-white screen align-content-center"
 				style={{ backgroundColor }}
 			>
 				<header>
-					<div class=" d-flex justify-content-between my-2">
-						<h3 class="masthead-brand">{pageLogoTitle}</h3>
-						<nav class="nav justify-content-center">
-							<a class="nav-link active" href="#">
+					<div className=" d-flex justify-content-between my-2">
+						<h3 className="masthead-brand">{pageLogoTitle}</h3>
+						<nav className="nav justify-content-center">
+							<a className="nav-link active" href="#">
 								Home
 							</a>
-							<a class="nav-link" href="#">
+							<a className="nav-link" href="#">
 								Features
 							</a>
-							<a class="nav-link" href="#">
+							<a className="nav-link" href="#">
 								Contact
 							</a>
 						</nav>
 					</div>
 				</header>
 
-				<main role="main" class="mx-auto container my-auto">
-					<h1 class="fs-2 text-center mb-4">{landingTitle}</h1>
-					<p class="fs-5">{landingText}</p>
-					<div className="d-flex justify-content-center my-5">
+				<main role="main" className="mx-auto container my-auto">
+					<h1 className="fs-2 text-center mb-4">{landingTitle}</h1>
+					<p className="fs-5">{landingText}</p>
+					<div classNameName="d-flex justify-content-center my-5">
 						<img
 							src={thumbnailSrc}
 							alt="img"
 							style={{ width: 300 }}
 						/>
 					</div>
-					<p class="d-flex justify-content-center">
-						<a href="#" class="btn btn-lg btn-secondary">
+					<p className="d-flex justify-content-center">
+						<a href="#" className="btn btn-lg btn-secondary">
 							{buttonText}
 						</a>
 					</p>
 				</main>
 
-				<footer class="d-flex justify-content-center">
-					<div class="inner">
+				<footer className="d-flex justify-content-center">
+					<div className="inner">
 						<p>Cover template </p>
 					</div>
 				</footer>
