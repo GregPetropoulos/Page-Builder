@@ -33,11 +33,12 @@ const ApiLogOut = async (userInfo) => {
   }
 };
 
-const ApiRegister = async (email, password) => {
+const ApiRegister = async (email, password, username) => {
   try {
     const response = await axios.post(routes.register(), {
       email,
       password,
+	  username,
     });
     return response.data;
   } catch (err) {
