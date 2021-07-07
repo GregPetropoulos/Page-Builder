@@ -91,7 +91,7 @@ module.exports = {
       // stuck here cant see new database profile after post request
       // localhost:3002/api/users/60df3f804d16f43f24ec21b4/profile
 
-     const updatedProfile= await db
+     const updatedProfile = await db
      .findOneAndUpdate({email}, req.body,{ new: true })
     }catch(err){
       res.status(500).send(error);
