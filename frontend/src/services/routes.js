@@ -4,6 +4,7 @@ export const routes = {
 	register: () => `api/users/register`,
 	logout: () => `api/users/logout`,
 	profile: () => `api/users/:id/profile`,
+	deleteUser: () => `api/users/delete`,
 	// ---Do I need this?
 
 

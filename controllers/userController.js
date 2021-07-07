@@ -26,7 +26,7 @@ module.exports = {
     }
   },
   signUpUser: async (req, res) => {
-    const { email, password,username } = req.body;
+    const { email, password, username } = req.body;
     if (email.length <= 4) {
       res.status(400).send({ error: 'Email is too short' });
     } else if (password.length <= 4) {
@@ -72,11 +72,17 @@ module.exports = {
   },
   // using email from browser to id user
   deleteUser: async (req, res) => {
+    console.log('req', req.body);
     const { email, password } = req.body;
+    console.log('email', email);
     try {
-      // const userDeleted = await 
-      await db.findOneAndDelete({ email});
-      res.json({message:'delete user success'})
+      // const userDeleted = await
+      // const response = await db.findByIdAndDelete( req.params.id);
+      const response = await db.findOneAndDelete({ email });
+      // const user = await db.find({email})
+      // console.log('user', user);
+
+      res.json({ message: 'delete user success' });
       // if(userDeleted) {
       //   return res.send(200).send({ message: 'user is deleted' });
       // }
@@ -86,22 +92,23 @@ module.exports = {
   },
 
   profileFormInput: async (req, res) => {
+    console.log('request', req.body);
     const { firstName, lastName, about, github } = req.body;
     try {
       // stuck here cant see new database profile after post request
       // localhost:3002/api/users/60df3f804d16f43f24ec21b4/profile
 
-     const updatedProfile= await db
-     .findOneAndUpdate({email}, req.body,{ new: true })
-    }catch(err){
+      const updatedProfile = await db.findOneAndUpdate({ email }, req.body, {
+        new: true,
+      });
+    } catch (err) {
       res.status(500).send(error);
-     }
-     return res.status(200).json({
-      message : "Profile Updated",
-      data: updatedProfile
-     });
-      // const databaseProfile= new db(profileInput);
-      // await databaseProfile.save()
-     
+    }
+    return res.status(200).json({
+      message: 'Profile Updated',
+      data: updatedProfile,
+    });
+    // const databaseProfile= new db(profileInput);
+    // await databaseProfile.save()
   },
 };

@@ -19,7 +19,7 @@ router.route("/logout")
 
 // // will need a delete a user button and route
 
-router.route("/:id/delete")
+router.route("/delete")
 .delete(userController.deleteUser)
 
 

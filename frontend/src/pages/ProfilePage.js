@@ -3,7 +3,7 @@ import { SideNavbar } from "../components/SideNavbar";
 import { ProfileForm } from "../components/ProfileForm";
 
 export const ProfilePage = ({ currentUserProp, signOutFunc }) => {
-
+console.log('hit', currentUserProp)
   return (
     <div className="grid grid-cols-5 grid-rows-1 p-8 space-x-4">
         <div >
@@ -15,6 +15,7 @@ export const ProfilePage = ({ currentUserProp, signOutFunc }) => {
             lastName=''
             about=''
             github=''
+            email={currentUserProp.email}
             />
         </div>
     </div>

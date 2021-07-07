@@ -1,6 +1,6 @@
-import React, { useRef, useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import serviceRoutes from '../services/routes';
-import { UserContext } from '../context/UserContext';
+import accountServices from '../services/account';
 
 // https://blog.logrocket.com/forms-in-react-in-2020/
 // As it turns out, the browser handles form state internally by default,
@@ -8,47 +8,73 @@ import { UserContext } from '../context/UserContext';
 
 // https://mattboldt.com/2020/05/02/formdata-with-react-hooks-and-fetch/
 
-export const ProfileForm = ({ firstName, lastName, about, github }) => {
-  const { userEmail } = useContext(UserContext);
-  console.log(userEmail);
+export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
+  // const { userEmail } = useContext(UserContext);
+  console.log('email', email);
   const [profile, setProfile] = useState({
-    firstName,
-    lastName,
-    about,
-    github,
+    firstName: '',
+    lastName: '',
+    about: '',
+    github: '',
+    email,
   });
-  let form = useRef(null);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(form.current);
-    fetch('/api/users/:id/profile', {
-      method: 'POST',
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((json) => setProfile(json.profile));
 
-    //  Unable to connect this front end of the profile post
-    console.log(data);
-    console.log(profile);
-
-
+  const inputsHandler = (e) => {
+    console.log('e', e.target.value);
+    setProfile({ [e.target.name]: e.target.value });
   };
-
-// using email in UserContext to id the user
-  const handleDelete = () => {
-    fetch('/api/users/:id/delete', {
-      method: 'DELETE',
-      body: { email: userEmail}
-    })
-      .then((res) => res.json())
-      .then((json) => setProfile(json.profile));
+  const handleSubmit = () => {
+    console.log('submit', profile);
+    alert(profile.firstName);
   };
+  // let form = useRef(null);
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   console.log('event', event.target)
+  //   console.log('form current', form.current)
+  //   const data = new FormData(form.current);
+  //   console.log({ data });
+
+  //   try {
+  //     const response = await accountServices.ApiProfileForm(firstName, lastName, about, github, email);
+  //     console.log('response form', response);
+  //   } catch (e) {
+  //     console.error({ e });
+  //   }
+  // fetch('/api/users/:id/profile', {
+  //   method: 'POST',
+  //   body: data,
+  // })
+  //   .then((res) => res.json())
+  //   .then((json) => setProfile(json.profile));
+
+  // //  Unable to connect this front end of the profile post
+  // console.log(data);
+  // console.log(profile);
+  //   console.log('form', form);
+  // };
+
+  // using email in UserContext to id the user
+  const handleDelete = async() => {
+
+    try {
+      const response = await accountServices.ApiDeleteUser(email)
+      console.log('dleete front', response)
+    } catch (e) {
+      console.error({e})
+    }
+  //   fetch('/api/users/delete', {
+  //     method: 'DELETE',
+  //     body: { email },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((json) => setProfile(json.profile));
+  // };
   // HANDLE DELETE ACCOUNT WITH USE EFFECT HOOK
   // stuck here
 
   return (
-    <form ref={form} id='form' onSubmit={handleSubmit}>
+    <form id='form'>
       <div className='bg-white dark:bg-gray-800'>
         <div className='container mx-auto bg-white dark:bg-gray-800 rounded'>
           <div className='xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800'>
@@ -86,8 +112,9 @@ export const ProfileForm = ({ firstName, lastName, about, github }) => {
                     <input
                       type='text'
                       id='FirstName'
-                      name='profile[firstName]'
-                      defaultValue={profile.firstName}
+                      onChange={inputsHandler}
+                      name='firstName'
+                      value={profile.firstName}
                       className='border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400'
                     />
                   </div>
@@ -101,8 +128,9 @@ export const ProfileForm = ({ firstName, lastName, about, github }) => {
                     <input
                       type='text'
                       id='LastName'
-                      name='profile[lastName]'
-                      defaultValue={profile.lastName}
+                      onChange={inputsHandler}
+                      name='lastName'
+                      value={profile.lastName}
                       className='border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400'
                     />
                   </div>
@@ -117,8 +145,9 @@ export const ProfileForm = ({ firstName, lastName, about, github }) => {
                 </label>
                 <textarea
                   id='about'
-                  name='profile[about]'
-                  defaultValue={profile.about}
+                  name='about'
+                  onChange={inputsHandler}
+                  value={profile.about}
                   className='bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400'
                   placeholder='Let the world know who you are'
                   rows={5}
@@ -138,7 +167,7 @@ export const ProfileForm = ({ firstName, lastName, about, github }) => {
           </button>
           <button
             className='bg-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-2 text-sm'
-            type='submit'
+            type='submit' onClick={handleSubmit}
           >
             Save
           </button>
