@@ -16,13 +16,13 @@ const User = new Schema({
     type: String,
     required: [true,'Please enter a username'],
   },
-  
-profile: {
-  firstName: String,
-  lastName: String,
-  about: String,
-  github: String,
-},
+    
+  profile: {
+    firstName: String,
+    lastName: String,
+    about: String,
+    github: String,
+  },
 
   pages: [
     {

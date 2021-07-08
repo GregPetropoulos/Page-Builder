@@ -15,17 +15,9 @@ export const SideNavbar = (props) => {
     console.log('lo clicked')
     setLogin(!isLogin);
 
-<<<<<<< HEAD
-    // if (email) {
-      ApiLogOut({ email, password });
-      props.signOut();
-      history.push("/", { noUser: true });
-    // }
-=======
     ApiLogOut({ email, password });
     props.signOut();
     history.push('/', { noUser: true });
->>>>>>> main
   };
 
   return (
@@ -39,7 +31,6 @@ export const SideNavbar = (props) => {
                 {/* { props.name === "Page" ?
                                             (<Link to="/newpage"><span className="text-sm">New {props.name}</span></Link>):
                                         (<Link to="/newproject"><span className="text-sm">New {props.name}</span></Link>)} */}
-<<<<<<< HEAD
                 <span className="text-sm uppercase text-indigo-50 font-black">
                   {newBtn === 'new page' ? <Link to="/templates">{newBtn}</Link>: newBtn}
                 </span>
@@ -55,23 +46,6 @@ export const SideNavbar = (props) => {
             <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
               <div className="flex items-center">
                 <span className="text-sm uppercase text-indigo-50 font-black">
-=======
-                <span className='text-sm uppercase text-indigo-50 font-black'>
-                  New Page
-                </span>
-              </div>
-            </li>
-            <li className='flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6'>
-              <div className='flex items-center'>
-                <span className='text-sm uppercase text-indigo-50 font-black'>
-                  Your Pages
-                </span>
-              </div>
-            </li>
-            <li className='flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6'>
-              <div className='flex items-center'>
-                <span className='text-sm uppercase text-indigo-50 font-black'>
->>>>>>> main
                   Share
                 </span>
               </div>

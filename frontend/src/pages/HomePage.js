@@ -7,10 +7,6 @@ import { Navbar } from '../components/Navbar';
 export const HomePage = (props) => {
 	const { pages } = usePages();
 	return (
-		<>
-		<div>
-			<Navbar/>
-		</div>
 		<div className="grid grid-cols-5 grid-rows-4 p-8 space-x-4">
 			<div className="col-span-1 row-span-4">
 				<SideNavbar currentUser={props.currentUserProp} signOut={props.signOutFunc} menuItems={{newBtn: 'new page', yourBtn: 'your pages'}}/>
@@ -35,6 +31,5 @@ export const HomePage = (props) => {
 				)} 
 			</div>
 		</div>
-		</>
 	);
 };

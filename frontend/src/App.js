@@ -18,12 +18,11 @@ function App() {
 	const { currentUser, signOut } = useContext(AuthContext);
 	return (
 		<div className="bg-gray-200">
+			<Navbar currentUserProp={currentUser}/>
 			<BrowserRouter>
 				<Switch>
-					<Route path="/">
-						{ !currentUser ? ( <LandingPage />): <HomePage currentUserProp={currentUser} signOutFunc={signOut}/> }
-					</Route>
-				<Navbar/>
+
+				
 					<PrivateRoute path="/templates">
 						<TemplatePage configs={templates} currentUserProp={currentUser} signOutFunc={signOut} />
 					</PrivateRoute>
@@ -39,6 +38,9 @@ function App() {
 					<PrivateRoute path="/profilepage">
 						<ProfilePage currentUserProp={currentUser} signOutFunc={signOut}/>
 					</PrivateRoute>
+					<Route path="/">
+						{ !currentUser ? ( <LandingPage />): <HomePage currentUserProp={currentUser} signOutFunc={signOut}/> }
+					</Route>
 				</Switch>
 			</BrowserRouter>
 			<Footer />

@@ -93,27 +93,25 @@ module.exports = {
 
   profileFormInput: async (req, res) => {
     console.log('request', req.body);
-    const { firstName, lastName, about, github } = req.body;
     try {
       // stuck here cant see new database profile after post request
       // localhost:3002/api/users/60df3f804d16f43f24ec21b4/profile
 
-<<<<<<< HEAD
-     const updatedProfile = await db
-     .findOneAndUpdate({email}, req.body,{ new: true })
-    }catch(err){
-=======
-      const updatedProfile = await db.findOneAndUpdate({ email }, req.body, {
-        new: true,
+      const updatedProfile = await db.findOneAndUpdate(
+        { _id: req.session.user },
+        { profile: req.body },
+        {
+          new: true,
+        }
+      );
+
+      res.status(200).json({
+        message: 'Profile Updated',
+        data: updatedProfile,
       });
     } catch (err) {
->>>>>>> main
       res.status(500).send(error);
     }
-    return res.status(200).json({
-      message: 'Profile Updated',
-      data: updatedProfile,
-    });
     // const databaseProfile= new db(profileInput);
     // await databaseProfile.save()
   },
