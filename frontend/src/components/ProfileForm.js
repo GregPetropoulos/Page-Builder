@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import serviceRoutes from '../services/routes';
 import accountServices from '../services/account';
 
 // https://blog.logrocket.com/forms-in-react-in-2020/
@@ -62,6 +61,7 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
     } catch (e) {
       console.error({ e });
     }
+  }
     //   fetch('/api/users/delete', {
     //     method: 'DELETE',
     //     body: { email },
@@ -182,5 +182,5 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
         </div>
       </form>
     );
-  };
 };
+
