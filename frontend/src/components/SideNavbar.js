@@ -7,13 +7,25 @@ export const SideNavbar = (props) => {
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
   const { email, password } = props.currentUser;
+  // const { new, your } =
+  console.log('mm', props.menuItems)
+  const { newBtn, yourBtn } = props.menuItems
   const handleClick = (e) => {
     e.preventDefault();
+    console.log('lo clicked')
     setLogin(!isLogin);
 
+<<<<<<< HEAD
+    // if (email) {
+      ApiLogOut({ email, password });
+      props.signOut();
+      history.push("/", { noUser: true });
+    // }
+=======
     ApiLogOut({ email, password });
     props.signOut();
     history.push('/', { noUser: true });
+>>>>>>> main
   };
 
   return (
@@ -27,6 +39,23 @@ export const SideNavbar = (props) => {
                 {/* { props.name === "Page" ?
                                             (<Link to="/newpage"><span className="text-sm">New {props.name}</span></Link>):
                                         (<Link to="/newproject"><span className="text-sm">New {props.name}</span></Link>)} */}
+<<<<<<< HEAD
+                <span className="text-sm uppercase text-indigo-50 font-black">
+                  {newBtn === 'new page' ? <Link to="/templates">{newBtn}</Link>: newBtn}
+                </span>
+              </div>
+            </li>
+            {/* <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
+              <div className="flex items-center">
+                <span className="text-sm uppercase text-indigo-50 font-black">
+                <Link to="/"><span className="text-sm"> {yourBtn}</span></Link>
+                </span>
+              </div>
+            </li> */}
+            <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
+              <div className="flex items-center">
+                <span className="text-sm uppercase text-indigo-50 font-black">
+=======
                 <span className='text-sm uppercase text-indigo-50 font-black'>
                   New Page
                 </span>
@@ -42,6 +71,7 @@ export const SideNavbar = (props) => {
             <li className='flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6'>
               <div className='flex items-center'>
                 <span className='text-sm uppercase text-indigo-50 font-black'>
+>>>>>>> main
                   Share
                 </span>
               </div>

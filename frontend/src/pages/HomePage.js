@@ -13,7 +13,7 @@ export const HomePage = (props) => {
 		</div>
 		<div className="grid grid-cols-5 grid-rows-4 p-8 space-x-4">
 			<div className="col-span-1 row-span-4">
-				<SideNavbar currentUser={props.currentUserProp} signOut={props.signOutFunc}/>
+				<SideNavbar currentUser={props.currentUserProp} signOut={props.signOutFunc} menuItems={{newBtn: 'new page', yourBtn: 'your pages'}}/>
 			</div>
 			<div className="">
 				{ Array.isArray(pages) && pages.length > 0 ? (
