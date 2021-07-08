@@ -3,7 +3,7 @@ import { Draggable } from './Draggable';
 export const TemplatePanel = ({ fields, onChange, onSave }) => {
 	const xAxis = Math.floor(window.innerWidth / 2) - 200;
 	const yAxis = Math.floor(window.innerHeight / 2) - 200;
-
+	console.log('onSave', onSave)
 	const components = fields.map(field => {
 		switch (field.type) {
 			case 'text':
@@ -12,7 +12,7 @@ export const TemplatePanel = ({ fields, onChange, onSave }) => {
 						<label className="form-label">{field.name}</label>
 						<input
 							type="email"
-							className="form-control"
+							className="form-control col-start-2"
 							aria-describedby="emailHelp"
 							value={field.value}
 							onChange={ev => onChange(field.id, ev.target.value)}
@@ -57,16 +57,16 @@ export const TemplatePanel = ({ fields, onChange, onSave }) => {
 	return (
 		<Draggable
 			position={{ x: xAxis, y: yAxis }}
-			className="d-flex flex-column input-wrapper p-3  bg-dark text-white rounded border"
+			className="flex-wrap px-3 py-2 bg-indigo-700 text-white rounded-lg"
 		>
-			<h2 className="mb-3 border-bottom">Editor</h2>
+			<h2 className="col-span-2 text-center border-b-2">Editor</h2>
 			<div
-				className="d-flex flex-column"
+				className="grid grid-cols-2 gap-2"
 				style={{ cursor: 'default' }}
 				onPointerDown={ev => ev.stopPropagation()}
 			>
 				{components}
-				<button className="my-5 btn btn-primary" onClick={onSave}>
+				<button className="my-4 px-3 col-span-2 bg-indigo-50 text-indigo-600 btn-active rounded-lg" onClick={onSave}>
 					Submit
 				</button>
 			</div>

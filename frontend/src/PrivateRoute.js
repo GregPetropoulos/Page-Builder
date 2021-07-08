@@ -4,6 +4,7 @@ import { AuthContext } from './context/AuthContext';
 
 export const PrivateRoute = ({ children, ...props }) => {
 	const { currentUser } = useContext(AuthContext);
+	console.log(currentUser);
 	return currentUser ? (
 		<Route {...props}>{children}</Route>
 	) : (

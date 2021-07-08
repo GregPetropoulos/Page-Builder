@@ -25,7 +25,6 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 console.log('Running in production mode: ', IS_PROD);
 
 app.use(express.static(path.join(__dirname, 'frontend/build')))
-	.set('trust proxy', 1)
 	.use(express.json())
 	.use(
 		session({
@@ -53,7 +52,7 @@ app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
 });
 
-httpServer.listen(process.env.PORT || 8080);
+httpServer.listen(process.env.PORT || 3002);
 
 // function () {
 // 	console.log(`🌎  ==> API Server now listening on PORT ${httpServer}!`);

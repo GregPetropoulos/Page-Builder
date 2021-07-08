@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
+
 import accountService from '../services/account';
 
 export const Login = () => {
@@ -21,6 +22,7 @@ export const Login = () => {
 			setError('Email or password too short');
 		}
 	};
+	
 	return (
 		<form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 h-full" onSubmit={handleSubmit}>
 			<h1 className="text-center font-black pb-2">LOGIN</h1>
