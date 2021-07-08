@@ -62,9 +62,10 @@ export const Template1 = (
 				<main role="main" className="mx-auto container my-auto">
 					<h1 className="fs-2 text-center mb-4">{landingTitle}</h1>
 					<p className="fs-5">{landingText}</p>
-					<div classNameName="d-flex justify-content-center my-5">
+					<div classNameName="d-flex content-center my-5">
 						<img
 							src={thumbnailSrc}
+							className="img-fluid"
 							alt="img"
 							style={{ width: 300 }}
 						/>

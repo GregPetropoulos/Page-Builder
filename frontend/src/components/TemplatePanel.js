@@ -12,7 +12,7 @@ export const TemplatePanel = ({ fields, onChange, onSave }) => {
 						<label className="form-label">{field.name}</label>
 						<input
 							type="email"
-							className="form-control"
+							className="form-control col-start-2"
 							aria-describedby="emailHelp"
 							value={field.value}
 							onChange={ev => onChange(field.id, ev.target.value)}
@@ -57,16 +57,16 @@ export const TemplatePanel = ({ fields, onChange, onSave }) => {
 	return (
 		<Draggable
 			position={{ x: xAxis, y: yAxis }}
-			className="flex-wrap grid-cols-1 px-3 py-2 bg-indigo-700 text-white rounded-lg"
+			className="flex-wrap px-3 py-2 bg-indigo-700 text-white rounded-lg"
 		>
-			<h2 className="col-span-1 text-center underline">Editor</h2>
+			<h2 className="col-span-2 text-center border-b-2">Editor</h2>
 			<div
-				className="d-flex flex-column"
+				className="grid grid-cols-2 gap-2"
 				style={{ cursor: 'default' }}
 				onPointerDown={ev => ev.stopPropagation()}
 			>
 				{components}
-				<button className="my-5 btn btn-primary" onClick={onSave}>
+				<button className="my-4 px-3 col-span-2 bg-indigo-50 text-indigo-600 btn-active rounded-lg" onClick={onSave}>
 					Submit
 				</button>
 			</div>
