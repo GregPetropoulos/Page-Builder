@@ -21,7 +21,7 @@ useEffect( async () => {
   return (
     <div className="grid grid-cols-5 grid-rows-4 p-8 space-x-4">
         <div className="col-span-1 row-span-4">
-          <SideNavbar currentUser={props.currentUserProp} signOut={props.signOutFunc} />
+          <SideNavbar currentUser={props.currentUserProp} signOut={props.signOutFunc} menuItems={{newBtn: null, yourBtn: null}}/>
         </div>
         <div className="col-span-4">
           {htmlData ?  

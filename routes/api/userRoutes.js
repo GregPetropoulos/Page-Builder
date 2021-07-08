@@ -23,7 +23,7 @@ router.route("/delete")
 .delete(userController.deleteUser)
 
 
-router.route('/:id/profile')
+router.route('/profile')
 .post(userController.profileFormInput)
 
 module.exports = router;

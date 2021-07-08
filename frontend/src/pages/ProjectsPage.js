@@ -5,7 +5,7 @@ export const ProjectsPage = ({ configs }) => {
   return (
     <div>
       <div>
-        <SideNavbar />
+        <SideNavbar menuItems={{newBtn: null, yourBtn: null}} />
       </div>
 
       <div className="d-flex flex-row gap p-5 flex-wrap justify-content-center">

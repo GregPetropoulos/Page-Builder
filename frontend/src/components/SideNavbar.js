@@ -7,8 +7,12 @@ export const SideNavbar = (props) => {
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
   const { email, password } = props.currentUser;
+  // const { new, your } =
+  console.log('mm', props.menuItems)
+  const { newBtn, yourBtn } = props.menuItems
   const handleClick = (e) => {
     e.preventDefault();
+    console.log('lo clicked')
     setLogin(!isLogin);
 
     ApiLogOut({ email, password });
@@ -27,21 +31,21 @@ export const SideNavbar = (props) => {
                 {/* { props.name === "Page" ?
                                             (<Link to="/newpage"><span className="text-sm">New {props.name}</span></Link>):
                                         (<Link to="/newproject"><span className="text-sm">New {props.name}</span></Link>)} */}
-                <span className='text-sm uppercase text-indigo-50 font-black'>
-                  New Page
+                <span className="text-sm uppercase text-indigo-50 font-black">
+                  {newBtn === 'new page' ? <Link to="/templates">{newBtn}</Link>: newBtn}
                 </span>
               </div>
             </li>
-            <li className='flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6'>
-              <div className='flex items-center'>
-                <span className='text-sm uppercase text-indigo-50 font-black'>
-                  Your Pages
+            {/* <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
+              <div className="flex items-center">
+                <span className="text-sm uppercase text-indigo-50 font-black">
+                <Link to="/"><span className="text-sm"> {yourBtn}</span></Link>
                 </span>
               </div>
-            </li>
-            <li className='flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6'>
-              <div className='flex items-center'>
-                <span className='text-sm uppercase text-indigo-50 font-black'>
+            </li> */}
+            <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mb-6">
+              <div className="flex items-center">
+                <span className="text-sm uppercase text-indigo-50 font-black">
                   Share
                 </span>
               </div>
