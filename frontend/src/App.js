@@ -16,18 +16,14 @@ import { PrivateRoute } from './PrivateRoute';
 
 function App() {
 	const { currentUser, signOut } = useContext(AuthContext);
-	
 	return (
 		<div className="bg-gray-200">
-			<Navbar />
+			<Navbar currentUserProp={currentUser} signOutFunc={signOut}/>
 			<BrowserRouter>
 				<Switch>
 					<PrivateRoute path="/templates">
 						<TemplatePage configs={templates} currentUserProp={currentUser} signOutFunc={signOut} />
 					</PrivateRoute>
-					{/* <PrivateRoute path="/projects">
-						<ProjectsPage/>
-					</PrivateRoute> */}
 					<PrivateRoute path="/create/:id">
 						<TemplateEditor configs={templates} currentUserProp={currentUser} signOutFunc={signOut} />
 					</PrivateRoute>
@@ -38,7 +34,7 @@ function App() {
 						<ProfilePage currentUserProp={currentUser} signOutFunc={signOut}/>
 					</PrivateRoute>
 					<Route path="/">
-						{ !currentUser ? <LandingPage /> : <HomePage currentUserProp={currentUser} signOutFunc={signOut}/> }
+						{ !currentUser ? ( <LandingPage />): <HomePage currentUserProp={currentUser} signOutFunc={signOut}/> }
 					</Route>
 				</Switch>
 			</BrowserRouter>

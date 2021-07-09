@@ -8,18 +8,26 @@ export const Register = () => {
   const { auth } = useContext(AuthContext);
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    const [emailInput, passwordInput, confirmPasswordInput] =
+    const [emailInput, usernameInput, passwordInput, confirmPasswordInput] =
       ev.target.elements;
     const email = emailInput.value;
     const password = passwordInput.value;
     const confirmedPassword = confirmPasswordInput.value;
+    const username = usernameInput.value;
+    console.log('email check',email)
+    console.log('password check',password)
+    console.log('confirmed password check',confirmedPassword)
+    console.log('username check',username)
+    
     if (
       email.length > 0 &&
       password.length > 0 &&
-      confirmedPassword.length > 0
-    ) {
-      if (password === confirmedPassword) {
-        const userInfo = await accountService.ApiRegister(email, password);
+      confirmedPassword.length > 0 &&
+      username.length > 0
+      ) {
+        if (password === confirmedPassword) {
+
+        const userInfo = await accountService.ApiRegister(email, username, password);
         if (userInfo.error) {
           setError(userInfo.error);
         } else {
@@ -57,13 +65,14 @@ export const Register = () => {
         </small>
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
+        <label className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor = 'username'>
           Username
         </label>
         <input
-          type="Username"
+          type="text"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id=""
+          id="registerUsername"
           placeholder="@username"
         />
       </div>

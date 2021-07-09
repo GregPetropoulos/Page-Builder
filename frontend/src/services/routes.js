@@ -3,7 +3,8 @@ export const routes = {
 	login: () => `api/users/login`,
 	register: () => `api/users/register`,
 	logout: () => `api/users/logout`,
-	profile: () => `api/users/:id/profile`,
+	profile: () => `api/users/profile`,
+	deleteUser: () => `api/users/delete`,
 	// ---Do I need this?
 
 
