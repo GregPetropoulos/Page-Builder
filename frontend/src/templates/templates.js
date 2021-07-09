@@ -13,13 +13,12 @@ export const templates = [
 				value: 'Welcome Page',
 				type: 'text',
 			},
-			{
-				id: 'imageDropdown',
-				name: 'Background Image',
-				value: 'Backgroundimage1.png',
-				options: ['Backgroundimage1.png', 'Backgroundimage2.png','Backgroundimage3.png', 'Backgroundimage4.png', 'Backgroundimage5.png'],
-				type: 'dropdown',
-			},
+            {
+                id: 'bannerSrc',
+                name: 'Banner source',
+                value: 'https://cdn.theatlantic.com/media/mt/culture_test/the%20office%20finale%20ending.jpg',
+                type: 'text',
+            },
 			{
 				id: 'landingTitle',
 				name: 'Landing Title',

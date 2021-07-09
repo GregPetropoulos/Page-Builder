@@ -78,7 +78,7 @@ export const Template1 = (
 					</p>
 				</main>
 
-				<footer class="d-flex justify-content-center">
+				<footer className="d-flex justify-content-center">
 					<div class="inner">
 						<p> {footerText} </p>
 					</div>

@@ -1,4 +1,4 @@
-export const MyAwesomeTemplate = ({ pageTitle, imageDropdown, navItem1, navItem2, navItem3, navBackground, footerText }) => {
+export const MyAwesomeTemplate = ({ pageTitle, bannerSrc, navItem1, navItem2, navItem3, navBackground, footerText }) => {
 	return (
 		// <div>
 		// 	<h1>{pageTitle}</h1>
@@ -15,7 +15,7 @@ export const MyAwesomeTemplate = ({ pageTitle, imageDropdown, navItem1, navItem2
 				</ul>
 			</nav>
 			<div className="col-10">
-				<img src= {imageDropdown} alt="img" />	
+				<img src= {bannerSrc} alt="img" />	
 				<p>Welcome to our site. We hope to provide you with all of your needs</p>		
 			</div>
 			<footer class="d-flex justify-content-center">
