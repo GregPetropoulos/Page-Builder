@@ -7,7 +7,7 @@ export const Navbar = (props) => {
   const { currentUserProp, signOutFunc } = props;
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
-
+  console.log('cu', currentUserProp)
   const ApiLogOut = accountService.ApiLogOut;
 
   const handleClick = (e) => {
@@ -18,7 +18,7 @@ export const Navbar = (props) => {
       ApiLogOut({ email, password });
     }
     if (history) history.push('/', { noUser: true });
-    props.signOutFunc();
+    signOutFunc();
   };
 
 
@@ -31,7 +31,7 @@ export const Navbar = (props) => {
           </span>
         </div>
         <div className='flex'>
-          {currentUserProp ? (
+          {(currentUserProp)? (
             <div className='items-stretch hidden lg:flex content-center'>
               <a
                 className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black'
@@ -51,7 +51,6 @@ export const Navbar = (props) => {
               <a
                 className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
                 href='/'
-                className='text-sm uppercase text-indigo-50 font-black'
                 onClick={handleClick}>
                 Logout
               </a>
@@ -60,7 +59,7 @@ export const Navbar = (props) => {
             ''
           )}
         </div>
-        {currentUserProp ? (
+        {(currentUserProp)? (
           <div className='flex float-right'>
             <div className='avatar'>
               <div className='rounded-xl'>
