@@ -16,6 +16,11 @@ export const PageCard = ({ thumbnail, name, id }) => {
 		download(response.data, `${name}.html`);
 	}
 
+	const handleDelete = async id => {
+		const response = await pageServices.deletePage(id)
+		console.log('response', response)
+	}
+
 	return (
 		<div className="d-flex flex-column justify-content-between template-wrapper border p-2 rounded">
 			<img
@@ -32,6 +37,10 @@ export const PageCard = ({ thumbnail, name, id }) => {
 					<a className="ml-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" onClick={() => handleDownload(id)}>
 						<svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
 						<span>Download</span>
+					</a>
+					<a className="ml-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" onClick={() => handleDelete(id)}>
+						<img src="https://img.icons8.com/ios-filled/50/000000/trash.png" width="17px"/>
+						Delete
 					</a>
 				</div>
 			</div>

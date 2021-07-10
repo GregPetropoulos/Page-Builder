@@ -90,7 +90,21 @@ module.exports = {
         res.sendStatus(500);
       }
     }),
-};
 
-// From line 27
-// , { "pages.html": 0 }
+  deletePage: async (req, res) => {
+    const userId = req.session.user;
+      // const pageId = req.params.id;
+      // console.log('page id', pageId)
+      console.log('user id', userId)
+      try {
+        await db.updateOne(
+          { _id: id },
+          {
+
+          }
+        )
+      } catch (err) {
+
+      }
+  }
+};

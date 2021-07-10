@@ -12,5 +12,6 @@ export const routes = {
 	fetchPages: () => `/api/page/pages`,
 	viewPage: id => `/api/page/one/${id}`,
 	createPage: () => `/api/page/create/60d4430eb6c160b2a5b26c5a`,
-	download: id => `/api/page/${id}/download`
+	download: id => `/api/page/${id}/download`,
+	deletePage: id => `/api/page/delete/`
 };

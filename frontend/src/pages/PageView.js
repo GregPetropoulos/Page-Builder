@@ -12,7 +12,6 @@ useEffect( async () => {
     try {
        const response = await pageServices.viewPage(id);
        htmlDataSet(response)
-       console.log('response page view', response)
     } catch (err) {
        console.log(err);
     }

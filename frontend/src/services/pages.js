@@ -32,11 +32,19 @@ const downloadPage = async id => {
 	return await axios.get(routes.download(id), { withCredentials: true });
 };
 
+const deletePage = async id => {
+	console.log('delete page', id)
+	const response = await axios.delete(routes.deletePage(id), { withCredentials: true })
+	console.log('deletePage response', response)
+	return response
+}
+
 const pagesService = {
 	createPage,
 	fetchPages,
 	viewPage,
 	downloadPage,
+	deletePage
 };
 
 export default pagesService;
