@@ -8,7 +8,7 @@ export const HomePage = (props) => {
 	const { pages } = usePages();
 	return (
 		<div className="">
-			<div className="grid grid-cols-2 grid-rows-6 p-8 space-x-2 place-items-center mb-4 ">
+			<div className="grid grid-cols-2 p-8 space-x-2 place-items-center mb-4 ">
 				{ Array.isArray(pages) && pages.length > 0 ? (
 					pages.map(page => (
 						<PageCard
@@ -16,7 +16,7 @@ export const HomePage = (props) => {
 						id={page._id}
 						name={page.name}
 						thumbnail={page.thumbnail}
-						className="bg-gray-800 rounded-md"
+						className="bg-gray-800 rounded-md text-indigo-50"
 						></PageCard>
 						))
 						) : (
