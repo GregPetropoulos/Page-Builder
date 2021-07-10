@@ -4,8 +4,8 @@ import download from 'downloadjs'
 
 export const PageCard = ({ thumbnail, name, id }) => {
 	const [thumbnailSrc, setThumbnailSrc] = useState("https://via.placeholder.com/200");
-	console.log({id})
 	useEffect(() => {
+		console.log('thumbnail', thumbnail)
 		import(`../images/${thumbnail}`).then(mod =>
 			setThumbnailSrc(mod.default)
 		);
@@ -17,9 +17,9 @@ export const PageCard = ({ thumbnail, name, id }) => {
 	}
 
 	return (
-		<div className="d-flex flex-column justify-content-between template-wrapper border p-2 rounded">
+		<div className="d-flex flex-column justify-content-between template-wrapper border p-2 rounded bg-gray-800 rounded-md">
 			<img
-				className="img-fluid img img-wrapper"
+				className="img-fluid object-scale-down"
 				src={thumbnailSrc}
 				alt="thumbnail"
 			/>

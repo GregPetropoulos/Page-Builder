@@ -4,10 +4,6 @@ import { SideNavbar } from "../components/SideNavbar";
 export const ProjectsPage = ({ configs }) => {
   return (
     <div>
-      <div>
-        <SideNavbar menuItems={{newBtn: null, yourBtn: null}} />
-      </div>
-
       <div className="d-flex flex-row gap p-5 flex-wrap justify-content-center">
         {configs.map((template) => (
           <TemplateCard

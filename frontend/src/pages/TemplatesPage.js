@@ -5,10 +5,6 @@ export const TemplatePage = ({ configs, currentUserProp, signOutFunc }) => {
 
   return (
     <div className="grid grid-cols-5 grid-rows-1 p-8 space-x-4">
-      <div className="row-span-1">
-        <SideNavbar currentUser={currentUserProp} signOut={signOutFunc} menuItems={{newBtn: null, yourBtn: null}}/>
-      </div>
-
       <div className="flex flex-row gap p-5 flex-wrap justify-content-center row-span-1">
         {configs.map((template) => (
           <TemplateCard

@@ -8,8 +8,7 @@ import accountServices from '../services/account';
 // https://mattboldt.com/2020/05/02/formdata-with-react-hooks-and-fetch/
 
 export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
-  // const { userEmail } = useContext(UserContext);
-  console.log('email', email);
+  // console.log('email', email);
   const [profile, setProfile] = useState({
     firstName: '',
     lastName: '',
@@ -22,10 +21,7 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
     console.log('e', e.target.value);
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };
-  // const handleSubmit = () => {
-  //   console.log('submit', profile);
-  //   alert(profile.firstName);
-  // };
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { firstName, lastName, about, github, email } = profile;
@@ -44,24 +40,16 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
     }
   };
 
-  // using email in UserContext to id the user
-  const handleDelete = async () => {
-    try {
-      const response = await accountServices.ApiDeleteUser(email);
-      console.log('dleete front', response);
-    } catch (e) {
-      console.error({ e });
-    }
-  };
-  //   fetch('/api/users/delete', {
-  //     method: 'DELETE',
-  //     body: { email },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((json) => setProfile(json.profile));
+  // const handleDelete = async () => {
+  //   console.log('helllo')
+  //   try {
+  //     const response = await accountServices.ApiDeleteUser(email);
+  //     console.log('dleete front', response);
+  //   } catch (e) {
+  //     console.error({ e });
+  //   }
   // };
-  // HANDLE DELETE ACCOUNT WITH USE EFFECT HOOK
-  // stuck here
+  
 
   return (
     <form id='form'>
@@ -104,7 +92,7 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
                       id='FirstName'
                       onChange={inputsHandler}
                       name='firstName'
-                      value={profile.firstName}
+                      // value={profile.firstName}
                       className='border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400'
                     />
                   </div>
@@ -119,9 +107,8 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
                       type='text'
                       id='LastName'
                       onChange={inputsHandler}
-                      name='lastName'
                       // value={profile.lastName}
-                      // value=''
+                      name='lastName'
                       className='border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400'
                     />
                   </div>
@@ -139,7 +126,6 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
                   name='about'
                   onChange={inputsHandler}
                   // value={profile.about}
-                  // value=''
                   className='bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400'
                   placeholder='Let the world know who you are'
                   rows={5}
@@ -164,13 +150,13 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
           >
             Save
           </button>
-          <button
+          {/* <button
             className='bg-red-700 focus:outline-none transition duration-150 ease-in-out hover:bg-yellow-600 rounded text-white px-8 py-2 text-sm mx-2'
             onClick={handleDelete}
             type='submit'
           >
             Delete Account
-          </button>
+          </button> */}
         </div>
       </div>
     </form>

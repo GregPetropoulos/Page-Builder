@@ -70,22 +70,33 @@ module.exports = {
       res.sendStatus(404);
     }
   },
-  // using email from browser to id user
-  deleteUser: async (req, res) => {
-    console.log('req', req.body);
-    const { email, password } = req.body;
-    console.log('email', email);
-    try {
-      // const userDeleted = await
-      // const response = await db.findByIdAndDelete( req.params.id);
-      const response = await db.findOneAndDelete({ email });
-      // const user = await db.find({email})
-      // console.log('user', user);
 
-      res.json({ message: 'delete user success' });
-      // if(userDeleted) {
-      //   return res.send(200).send({ message: 'user is deleted' });
-      // }
+  deleteUser: async (req, res) => {
+    console.log('req params', req.params);
+
+    const id = req.params.id;
+
+    try {
+      const response = await db.findOneAndDelete({ _id: id });
+      console.log('delete backend res', response);
+      if (response._id) {
+        return res.json({ message: 'delete user success' });
+      }
+    } catch (err) {
+      res.sendStatus(500);
+    }
+  },
+  getUser: async (req, res) => {
+    console.log('req params', req.params);
+
+    const id = req.params.id;
+
+    try {
+      const response = await db.findOne({ _id: id });
+      console.log('get user', response);
+      if (response) {
+        return res.json(response);
+      }
     } catch (err) {
       res.sendStatus(500);
     }
@@ -94,9 +105,6 @@ module.exports = {
   profileFormInput: async (req, res) => {
     console.log('request', req.body);
     try {
-      // stuck here cant see new database profile after post request
-      // localhost:3002/api/users/60df3f804d16f43f24ec21b4/profile
-
       const updatedProfile = await db.findOneAndUpdate(
         { _id: req.session.user },
         { profile: req.body },
