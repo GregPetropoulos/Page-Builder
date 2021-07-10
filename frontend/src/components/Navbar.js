@@ -1,7 +1,27 @@
+import React, { useState } from 'react';
 import logopb from '../images/logopb.png';
+import { Link, useHistory } from 'react-router-dom';
+import accountService from '../services/account';
 
 export const Navbar = (props) => {
-  const { currentUserProp } = props;
+  const { currentUserProp, signOutFunc } = props;
+  const history = useHistory();
+  const [isLogin, setLogin] = useState(false);
+  console.log('cu', currentUserProp)
+  const ApiLogOut = accountService.ApiLogOut;
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setLogin(!isLogin);
+    if (props.currentUserProp) {
+      const { email, password } = props.currentUserProp
+      ApiLogOut({ email, password });
+    }
+    if (history) history.push('/', { noUser: true });
+    signOutFunc();
+  };
+
+
   return (
     <div className='p-3'>
       <div className='flex flex-wrap navbar mb-2 shadow-lg bg-gray-800 text-neutral-content rounded-xl'>
@@ -11,32 +31,35 @@ export const Navbar = (props) => {
           </span>
         </div>
         <div className='flex'>
-          {currentUserProp ? (
+          {(currentUserProp)? (
             <div className='items-stretch hidden lg:flex content-center'>
               <a
                 className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black'
-                href='/'
-              >
+                href='/'>
                 Home
               </a>
               <a
                 className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
-                href='/profilepage'
-              >
+                href='/profilepage'>
                 Profile
               </a>
               <a
                 className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
-                href='/templates'
-              >
+                href='/templates'>
                 Templates
               </a>
-            </div>
+              <a
+                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                href='/'
+                onClick={handleClick}>
+                Logout
+              </a>
+            </div>   
           ) : (
             ''
           )}
         </div>
-        {currentUserProp ? (
+        {(currentUserProp)? (
           <div className='flex float-right'>
             <div className='avatar'>
               <div className='rounded-xl'>

@@ -4,10 +4,10 @@ import accountServices from '../services/account';
 
 const DeleteAccount = (props) => {
   const { signOut } = useContext(AuthContext);
-  const { _id } = props.currentUser;
+  const { id } = props.currentUser;
   const handleDeleted = async () => {
     try {
-      await accountServices.ApiDeleteUser(_id);
+      await accountServices.ApiDeleteUser(id);
 
       signOut();
     } catch (error) {

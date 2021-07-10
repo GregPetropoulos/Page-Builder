@@ -4,8 +4,8 @@ import download from 'downloadjs'
 
 export const PageCard = ({ thumbnail, name, id }) => {
 	const [thumbnailSrc, setThumbnailSrc] = useState("https://via.placeholder.com/200");
-	console.log({id})
 	useEffect(() => {
+		console.log('thumbnail', thumbnail)
 		import(`../images/${thumbnail}`).then(mod =>
 			setThumbnailSrc(mod.default)
 		);

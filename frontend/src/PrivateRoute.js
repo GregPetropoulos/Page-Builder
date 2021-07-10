@@ -4,8 +4,8 @@ import { AuthContext } from './context/AuthContext';
 
 export const PrivateRoute = ({ children, ...props }) => {
   const { currentUser } = useContext(AuthContext);
-  console.log('CURRENT USER', currentUser, currentUser && currentUser._id);
-  return currentUser && currentUser._id ? (
+  console.log('CURRENT USER', currentUser, currentUser && currentUser.id);
+  return currentUser && currentUser.id ? (
     <Route {...props}>{children}</Route>
   ) : (
     <Redirect path='/' />
