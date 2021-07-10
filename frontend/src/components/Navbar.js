@@ -62,7 +62,7 @@ export const Navbar = (props) => {
           )}
         </div>
         {(currentUserProp)? (
-          <div className='flex float-right'>
+          <div className='flex float-right mr-5'>
             <div className='avatar'>
               <div className='rounded-xl'>
                 <img

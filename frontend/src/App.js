@@ -17,9 +17,6 @@ function App() {
   const { currentUser, signOut } = useContext(AuthContext);
 
   console.log('CURRENT USER', currentUser);
-  // if (currentUser === null) {
-  //   return <div>loading</div>;
-  // }
 
   return (
     <div className='bg-gray-200'>
@@ -33,9 +30,6 @@ function App() {
               signOutFunc={signOut}
             />
           </PrivateRoute>
-          {/* <PrivateRoute path="/projects">
-						<ProjectsPage/>
-					</PrivateRoute> */}
           <PrivateRoute path='/create/:id'>
             <TemplateEditor
               configs={templates}
@@ -62,33 +56,5 @@ function App() {
     </div>
   );
 }
-
-// const { currentUser, signOut } = useContext(AuthContext);
-//     return (
-//         <div className="bg-gray-200">
-//             <Navbar currentUserProp={currentUser} signOutFunc={signOut}/>
-//             <BrowserRouter>
-//                 <Switch>
-//                     <PrivateRoute path="/templates">
-//                         <TemplatePage configs={templates} currentUserProp={currentUser} signOutFunc={signOut} />
-//                     </PrivateRoute>
-//                     <PrivateRoute path="/create/:id">
-//                         <TemplateEditor configs={templates} currentUserProp={currentUser} signOutFunc={signOut} />
-//                     </PrivateRoute>
-//                     <PrivateRoute path="/page/:id">
-//                         <PageView currentUserProp={currentUser} signOutFunc={signOut}/>
-//                     </PrivateRoute>
-//                     <PrivateRoute path="/profilepage">
-//                         <ProfilePage currentUserProp={currentUser} signOutFunc={signOut}/>
-//                     </PrivateRoute>
-//                     <Route path="/">
-//                         { !currentUser ? ( <LandingPage />): <HomePage currentUserProp={currentUser} signOutFunc={signOut}/> }
-//                     </Route>
-//                 </Switch>
-//             </BrowserRouter>
-//             <Footer />
-//         </div>
-//     );
-// }
 
 export default App;

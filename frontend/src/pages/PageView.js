@@ -6,7 +6,6 @@ import pageServices from '../services/pages';
 export const PageView = (props) => {
   const { id } = useParams();
   const [htmlData, htmlDataSet] = useState(null)
-  console.log('id', id)
   useEffect( async () => {
       try {
         const response = await pageServices.viewPage(id);

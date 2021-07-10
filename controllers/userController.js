@@ -75,6 +75,7 @@ module.exports = {
     console.log('req params', req.params);
 
     const id = req.params.id;
+    console.log('iddd', id)
 
     try {
       const response = await db.findOneAndDelete({ _id: id });

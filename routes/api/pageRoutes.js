@@ -14,7 +14,7 @@ router.route('/one/:id')
 
 // CREATE A PAGE
 router.route('/create/:id')
-.post (pageController.updateOne)
+.post(pageController.updateOne)
 
 // DOWNLOAD USER PAGE
 router.route('/:id/download')
@@ -22,6 +22,6 @@ router.route('/:id/download')
 
 // DELETE PAGE
 router.route('/delete/:id')
-.get(pageController.deletePage)
+.delete(pageController.deletePage)
 
 module.exports = router;

@@ -92,19 +92,28 @@ module.exports = {
     }),
 
   deletePage: async (req, res) => {
+    console.log('wwww', req.session.user)
+    console.log('body', req.body)
     const userId = req.session.user;
       // const pageId = req.params.id;
       // console.log('page id', pageId)
-      console.log('user id', userId)
-      // try {
-      //   await db.updateOne(
-      //     { _id: id },
-      //     {
-
-      //     }
-      //   )
-      // } catch (err) {
-
-      // }
+      // console.log('user id', userId)
+      
+      
+      try {
+        await db.updateOne(
+          { _id: userId },
+          {
+            $unset: {
+              pages: { _id: '60e9cb902e3494b3ccfe90a3'},
+            },
+          }
+        );
+        // res.send({stuff: 'lol'})
+        res.sendStatus(201);
+      } catch (err) {
+        console.log(err);
+        res.sendStatus(500);
+      }
   }
 };
