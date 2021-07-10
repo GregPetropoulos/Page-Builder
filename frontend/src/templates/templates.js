@@ -15,8 +15,8 @@ export const templates = [
 			},
             {
                 id: 'bannerSrc',
-                name: 'Banner source',
-                value: 'https://cdn.theatlantic.com/media/mt/culture_test/the%20office%20finale%20ending.jpg',
+                name: 'Background Image',
+                value: 'https://images.pexels.com/photos/5253574/pexels-photo-5253574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 type: 'text',
             },
 			{
