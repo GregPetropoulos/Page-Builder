@@ -63,10 +63,10 @@ function App() {
             <ProfilePage currentUserProp={currentUser} signOutFunc={signOut} />
           </PrivateRoute>
           <Route path='/'>
-            {!currentUser ? (
-              <LandingPage />
-            ) : (
+            {currentUser && currentUser.id ? (
               <HomePage currentUserProp={currentUser} signOutFunc={signOut} />
+            ) : (
+              <LandingPage />
             )}
           </Route>
         </Switch>
