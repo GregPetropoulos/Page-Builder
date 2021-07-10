@@ -96,15 +96,15 @@ module.exports = {
       // const pageId = req.params.id;
       // console.log('page id', pageId)
       console.log('user id', userId)
-      try {
-        await db.updateOne(
-          { _id: id },
-          {
+      // try {
+      //   await db.updateOne(
+      //     { _id: id },
+      //     {
 
-          }
-        )
-      } catch (err) {
+      //     }
+      //   )
+      // } catch (err) {
 
-      }
+      // }
   }
 };

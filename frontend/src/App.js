@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { TemplateEditor } from './components/TemplateEditor';
 import { TemplatePage } from './pages/TemplatesPage';
-import { ProjectsPage } from './pages/ProjectsPage';
 import { HomePage } from './pages/HomePage';
 import { PageView } from './pages/PageView';
 import { LandingPage } from './pages/LandingPage';

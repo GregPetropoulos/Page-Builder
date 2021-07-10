@@ -18,7 +18,7 @@ export const Navbar = (props) => {
       ApiLogOut({ email, password });
     }
     if (history) history.push('/', { noUser: true });
-    props.signOutFunc();
+    signOutFunc();
   };
 
 
@@ -27,7 +27,9 @@ export const Navbar = (props) => {
       <div className='flex flex-wrap navbar mb-2 shadow-lg bg-gray-800 text-neutral-content rounded-xl'>
         <div className='flex-none px-2 mx-2 align-middle'>
           <span className='text-lg font-bold'>
-            <img src={logopb} alt='logopb' className='w-20 h-20' />
+            <a href='/'>
+              <img src={logopb} alt='logopb' className='w-20 h-20' />
+            </a>
           </span>
         </div>
         <div className='flex'>
@@ -39,19 +41,18 @@ export const Navbar = (props) => {
                 Home
               </a>
               <a
-                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black px-3 py-2'
                 href='/profilepage'>
                 Profile
               </a>
               <a
-                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black px-3 py-2'
                 href='/templates'>
                 Templates
               </a>
               <a
-                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black px-3 py-2'
                 href='/'
-                className='text-sm uppercase text-indigo-50 font-black'
                 onClick={handleClick}>
                 Logout
               </a>
@@ -61,7 +62,7 @@ export const Navbar = (props) => {
           )}
         </div>
         {currentUserProp ? (
-          <div className='flex float-right'>
+          <div className='float-right mr-5'>
             <div className='avatar'>
               <div className='rounded-xl'>
                 <img

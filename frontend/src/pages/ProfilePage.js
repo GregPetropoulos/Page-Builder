@@ -1,5 +1,4 @@
 import React from "react";
-import { SideNavbar } from "../components/SideNavbar";
 import { ProfileForm } from "../components/ProfileForm";
 
 export const ProfilePage = ({ currentUserProp, signOutFunc }) => {

@@ -21,7 +21,7 @@ router.route('/:id/download')
 .get(pageController.download)
 
 // DELETE PAGE
-router.route('/delete/')
+router.route('/delete/:id')
 .get(pageController.deletePage)
 
 module.exports = router;

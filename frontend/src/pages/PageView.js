@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from 'react';
-import { SideNavbar } from "../components/SideNavbar";
 import { useParams } from 'react-router-dom';
 import pageServices from '../services/pages';
 

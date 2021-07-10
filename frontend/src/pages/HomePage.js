@@ -1,8 +1,5 @@
 import { usePages } from '../hooks/usePages';
 import { PageCard } from '../components/PageCard';
-import { SideNavbar } from '../components/SideNavbar';
-import { Navbar } from '../components/Navbar';
-
 
 export const HomePage = (props) => {
 	const { pages } = usePages();

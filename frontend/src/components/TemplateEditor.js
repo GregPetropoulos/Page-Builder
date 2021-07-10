@@ -2,16 +2,17 @@ import { forwardRef, useMemo, useRef, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import pagesService from '../services/pages';
 import { TemplatePanel } from './TemplatePanel';
+import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
 
 const TemplateProvider = forwardRef(({ children }, ref) => {
 	return (
 		<div ref={ref}>
-			<link
+			{/* <link
 				href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
 				rel="stylesheet"
 				integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
 				crossorigin="anonymous"
-			></link>
+			></link> */}
 			{children}
 		</div>
 	);
