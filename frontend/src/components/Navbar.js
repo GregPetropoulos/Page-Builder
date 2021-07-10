@@ -7,20 +7,19 @@ export const Navbar = (props) => {
   const { currentUserProp, signOutFunc } = props;
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
-  console.log('cu', currentUserProp)
+  console.log('cu', currentUserProp);
   const ApiLogOut = accountService.ApiLogOut;
 
   const handleClick = (e) => {
     e.preventDefault();
     setLogin(!isLogin);
     if (props.currentUserProp) {
-      const { email, password } = props.currentUserProp
+      const { email, password } = props.currentUserProp;
       ApiLogOut({ email, password });
     }
     if (history) history.push('/', { noUser: true });
     signOutFunc();
   };
-
 
   return (
     <div className='p-3'>
@@ -36,7 +35,8 @@ export const Navbar = (props) => {
             <div className='items-stretch lg:flex content-center mt-5'>
               <a
                 className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black'
-                href='/'>
+                href='/'
+              >
                 Home
               </a>
               <a
@@ -48,6 +48,12 @@ export const Navbar = (props) => {
                 className='flex-1 btn btn-ghost btn-sm rounded-btn pl-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
                 href='/templates'>
                 Templates
+              </a>
+              <a
+                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                href='/statistics'
+              >
+                Statistics
               </a>
             </div>   
           ) : (
