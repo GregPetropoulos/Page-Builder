@@ -7,8 +7,8 @@ import { Navbar } from '../components/Navbar';
 export const HomePage = (props) => {
 	const { pages } = usePages();
 	return (
-		<div className="grid grid-cols-5 grid-rows-4 p-8 space-x-4">
-			<div className="">
+		<div className="">
+			<div className="grid grid-cols-2 grid-rows-6 p-8 space-x-2 place-items-center mb-4 ">
 				{ Array.isArray(pages) && pages.length > 0 ? (
 					pages.map(page => (
 						<PageCard
@@ -16,6 +16,7 @@ export const HomePage = (props) => {
 						id={page._id}
 						name={page.name}
 						thumbnail={page.thumbnail}
+						className="bg-gray-800 rounded-md"
 						></PageCard>
 						))
 						) : (
