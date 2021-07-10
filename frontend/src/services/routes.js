@@ -4,8 +4,7 @@ export const routes = {
 	register: () => `api/users/register`,
 	logout: () => `api/users/logout`,
 	profile: () => `api/users/profile`,
-	deleteUser: () => `api/users/delete`,
-	// ---Do I need this?
+	deleteUser: id => `api/users/delete/${id}`,
 
 
 	//page routes
