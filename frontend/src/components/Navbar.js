@@ -7,7 +7,7 @@ export const Navbar = (props) => {
   const { currentUserProp, signOutFunc } = props;
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
-
+  console.log('cu', currentUserProp)
   const ApiLogOut = accountService.ApiLogOut;
 
   const handleClick = (e) => {
@@ -33,7 +33,7 @@ export const Navbar = (props) => {
           </span>
         </div>
         <div className='flex'>
-          {currentUserProp ? (
+          {(currentUserProp)? (
             <div className='items-stretch hidden lg:flex content-center'>
               <a
                 className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black'
@@ -61,8 +61,8 @@ export const Navbar = (props) => {
             ''
           )}
         </div>
-        {currentUserProp ? (
-          <div className='float-right mr-5'>
+        {(currentUserProp)? (
+          <div className='flex float-right'>
             <div className='avatar'>
               <div className='rounded-xl'>
                 <img

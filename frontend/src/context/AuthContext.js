@@ -1,33 +1,49 @@
 import React, { useEffect, useState } from 'react';
+import accountService from '../services/account';
 
 export const AuthContext = React.createContext();
 
-const localUser = JSON.parse(localStorage.getItem('user'));
+const localUser = JSON.parse(localStorage.getItem('user'))
 
 export const AuthProvider = ({ children }) => {
-	const [currentUser, setCurrentUser] = useState(localUser || null);
+  const [currentUser, setCurrentUser] = useState(localUser || null);
 
-	const auth = userData => {
-		localStorage.setItem('user', JSON.stringify(userData));
-		setCurrentUser(userData);
-	};
+  //   useEffect(() => {
+  //     (async () => {
+  //       const localUser = JSON.parse(localStorage.getItem('user'));
+  // 	 console.log('local user', localUser)
+  //       if (localUser && localUser.id) {
+  //         const user = await accountService.ApiGetUser(localUser.id);
 
-	const signOut = () => {
-		localStorage.removeItem('user');
-		setCurrentUser(null);
-	};
+  //         if (user.data) {
+  //           console.log('HERE', localUser, user);
+  //           localStorage.setItem(
+  //             'user',
+  //             JSON.stringify({ id: user.data._id, ...user.data.profile })
+  //           );
+  //           setCurrentUser(user.data);
+  //         }
+  //       } else {
+  //         setCurrentUser({});
+  //       }
+  //     })();
+  //   }, []);
 
-	useEffect(() => {
-		if (currentUser) {
-			localStorage.setItem('user', JSON.stringify(currentUser));
-		} else {
-			localStorage.removeItem('user');
-		}
-	}, [currentUser]);
+  const auth = (userData) => {
+    console.log('SETTING USER', userData);
+    const user = { id: userData._id, ...userData.profile };
+    localStorage.setItem('user', JSON.stringify(user));
+    setCurrentUser(user);
+  };
 
-	return (
-		<AuthContext.Provider value={{ currentUser, auth, signOut }}>
-			{children}
-		</AuthContext.Provider>
-	);
+  const signOut = () => {
+    localStorage.removeItem('user');
+    setCurrentUser({});
+  };
+
+  return (
+    <AuthContext.Provider value={{ currentUser, auth, signOut }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
