@@ -11,7 +11,7 @@ require('dotenv').config();
 
 //set connection string with process variables
 const mongooseInit = async () => {
-	await mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
+	await mongoose.connect(process.env.MONGODB_URI, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useFindAndModify: false,
@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'frontend/build')))
 				sameSite: IS_PROD ? 'none' : 'lax',
 			},
 			store: MongoStore.create({
-				mongoUrl: process.env.MONGO_CONNECTION_STRING,
+				mongoUrl: process.env.MONGODB_URI,
 			}),
 		})
 	);
