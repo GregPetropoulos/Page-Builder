@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 import accountServices from '../services/account';
 
 const DeleteAccount = (props) => {
+  const { signOut } = useContext(AuthContext);
   const { _id } = props.currentUser;
   const handleDeleted = async () => {
     try {
-      const data = await accountServices.ApiDeleteUser(_id);
-      console.log('delete data in try catch', data);
+      await accountServices.ApiDeleteUser(_id);
+
+      signOut();
     } catch (error) {
       console.error({ error });
     }

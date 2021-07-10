@@ -72,10 +72,21 @@ const ApiProfileForm = async (firstName, lastName, about, github, email) => {
 };
 
 const ApiDeleteUser = async (id) => {
-  console.log('delete id', id)
+  console.log('delete id', id);
   try {
     const response = await axios.delete(routes.deleteUser(id));
     console.log('delete response', response);
+    return response;
+  } catch (e) {
+    console.error({ e });
+    return { error: `Error: ${e}` };
+  }
+};
+
+const ApiGetUser = async (id) => {
+  try {
+    const response = await axios.get(routes.getUser(id));
+    console.log('get response', response);
     return response;
   } catch (e) {
     console.error({ e });
@@ -89,6 +100,7 @@ const accountService = {
   ApiRegister,
   ApiProfileForm,
   ApiDeleteUser,
+  ApiGetUser,
 };
 
 export default accountService;

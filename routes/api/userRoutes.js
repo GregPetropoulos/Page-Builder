@@ -16,6 +16,8 @@ router.route('/logout').post(userController.logoutUser);
 // DELETE USER ACCOUNT AT PROFILE PAGE
 router.route('/delete/:id').delete(userController.deleteUser);
 
+router.route('/:id').get(userController.getUser);
+
 router.route('/profile').post(userController.profileFormInput);
 
 module.exports = router;

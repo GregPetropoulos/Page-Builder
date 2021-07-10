@@ -71,7 +71,6 @@ module.exports = {
     }
   },
 
-  
   deleteUser: async (req, res) => {
     console.log('req params', req.params);
 
@@ -80,8 +79,23 @@ module.exports = {
     try {
       const response = await db.findOneAndDelete({ _id: id });
       console.log('delete backend res', response);
-      if (response.deletedCount.length > 0) {
+      if (response._id) {
         return res.json({ message: 'delete user success' });
+      }
+    } catch (err) {
+      res.sendStatus(500);
+    }
+  },
+  getUser: async (req, res) => {
+    console.log('req params', req.params);
+
+    const id = req.params.id;
+
+    try {
+      const response = await db.findOne({ _id: id });
+      console.log('get user', response);
+      if (response) {
+        return res.json(response);
       }
     } catch (err) {
       res.sendStatus(500);
