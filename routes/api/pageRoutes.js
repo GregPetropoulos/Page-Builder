@@ -13,7 +13,7 @@ router.route('/one/:id')
 
 
 // CREATE A PAGE
-router.route('/create/:id')
+router.route('/create')
 .post(pageController.updateOne)
 
 // DOWNLOAD USER PAGE
@@ -21,7 +21,7 @@ router.route('/:id/download')
 .get(pageController.download)
 
 // DELETE PAGE
-router.route('/delete/:id')
+router.route('/:id/delete/:userId')
 .delete(pageController.deletePage)
 
 module.exports = router;

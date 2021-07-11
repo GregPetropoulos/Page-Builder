@@ -73,7 +73,6 @@ module.exports = {
       const { name, thumbnail, html } = req.body;
       const page = { name, thumbnail, html };
       const id = req.session.user;
-      console.log('PAGE TO SAVE', page)
 
       try {
         await db.updateOne(
@@ -92,25 +91,17 @@ module.exports = {
     }),
 
   deletePage: async (req, res) => {
-    console.log('wwww', req.session.user)
-    console.log('body', req.body)
-    const userId = req.session.user;
-      // const pageId = req.params.id;
-      // console.log('page id', pageId)
-      // console.log('user id', userId)
-      
-      
+    const { id, userId } = req.params
       try {
         await db.updateOne(
           { _id: userId },
           {
-            $unset: {
-              pages: { _id: '60e9cb902e3494b3ccfe90a3'},
+            $pull: {
+              pages:{ _id: id},
             },
           }
         );
-        // res.send({stuff: 'lol'})
-        res.sendStatus(201);
+        res.sendStatus(200);
       } catch (err) {
         console.log(err);
         res.sendStatus(500);

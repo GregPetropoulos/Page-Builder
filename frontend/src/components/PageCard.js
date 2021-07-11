@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import pageServices from '../services/pages';
 import download from 'downloadjs'
 
-export const PageCard = ({ userId,thumbnail, name, id }) => {
+export const PageCard = ({ userId, thumbnail, name, id }) => {
 	const [thumbnailSrc, setThumbnailSrc] = useState("https://via.placeholder.com/200");
 	useEffect(() => {
 		console.log('thumbnail', thumbnail)
@@ -16,9 +16,11 @@ export const PageCard = ({ userId,thumbnail, name, id }) => {
 		download(response.data, `${name}.html`);
 	}
 
-	const handleDelete = async (userId) => {
-		const response = await pageServices.deletePage(userId)
+	const handleDelete = async () => {
+		console.log(userId, id)
+		const response = await pageServices.deletePage(userId, id)
 		console.log('response', response)
+		if (response.status === 200) window.location.reload();
 	}
 
 	return (
