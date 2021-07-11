@@ -13,11 +13,11 @@ Build A Page is an application where the user can quickly and easily build eye c
 
 
 ## User Story
-AS a user I want to generate an HTML landing page for my personal or commercial use.
-WHEN I go to the Build A Page application, I am presented with a landing page that allows the user to login/signup.
-THEN as a logged-in user, I want to be able to create my own custom layout.
-WHEN I click on templates I am able to choose from different options from heading, custom color and images to build my page.
-SO when I have completed my desired layout I am able to view, download or delete my template.
+AS a user I want to generate an HTML landing page for my personal or commercial use.<br>
+WHEN I go to the Build A Page application, I am presented with a landing page that allows the user to login/signup.<br>
+THEN as a logged-in user, I want to be able to create my own custom layout.<br>
+WHEN I click on templates I am able to choose from different options from heading, custom color and images to build my page.<br>
+SO when I have completed my desired layout I am able to view, download or delete my template.<br>
 
 
 ## Table of Contents 
