@@ -26,7 +26,9 @@ export const Navbar = (props) => {
       <div className='flex flex-wrap navbar mb-2 shadow-lg bg-gray-900 text-neutral-content rounded-xl'>
         <div className='flex-none px-2 mx-2 align-middle'>
           <span className='text-lg font-bold'>
-            <img src={logopb} alt='logopb' className='w-20 h-20' />
+            <a href='/'>
+              <img src={logopb} alt='logopb' className='w-20 h-20' />
+            </a>
           </span>
         </div>
         <div class="flex-1 pl-2 ml-2">

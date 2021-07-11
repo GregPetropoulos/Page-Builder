@@ -1,11 +1,7 @@
 export const MyAwesomeTemplate = ({ pageTitle, imageDropdown, navItem1, navItem2, navItem3, navBackground, footerText }) => {
 	return (
-		// <div>
-		// 	<h1>{pageTitle}</h1>
-		// 	<img src={bannerSrc} alt="img" />
-		// </div>
-	<div class="container">
-		<div class="row">
+	<div className="container">
+		<div className="row">
 			<h1 className="col-11">{pageTitle}</h1>
 			<nav className="nav flex-column col-2" style={{ navBackground }}>
 				<ul>
@@ -18,8 +14,8 @@ export const MyAwesomeTemplate = ({ pageTitle, imageDropdown, navItem1, navItem2
 				<img src= {imageDropdown} alt="img" />	
 				<p>Welcome to our site. We hope to provide you with all of your needs</p>		
 			</div>
-			<footer class="d-flex justify-content-center">
-					<div class="inner">
+			<footer className="d-flex justify-content-center">
+					<div className="inner">
 						<p> {footerText} </p>
 					</div>
 			</footer>

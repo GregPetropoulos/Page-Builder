@@ -48,10 +48,10 @@ export const Template1 = (
 							<a class="nav-link active" href="#">
 								{navItem1}
 							</a>
-							<a class="nav-link" href="#">
+							<a className="nav-link" href="#">
 								{navItem2}
 							</a>
-							<a class="nav-link" href="#">
+							<a className="nav-link" href="#">
 								{navItem3}
 							</a>
 						</nav>
@@ -135,9 +135,9 @@ export const Template1 = (
 							style={{ width: 300 }}
 						/>
 					</div>
-					<p class="fs-5"> {landingText2} </p>
-					<p class="d-flex justify-content-center">
-						<a href="#" class="btn btn-lg btn-secondary">
+					<p className="fs-5"> {landingText2} </p>
+					<p className="d-flex justify-content-center">
+						<a href="#" className="btn btn-lg btn-secondary">
 							{buttonText}
 						</a>
 					</p>

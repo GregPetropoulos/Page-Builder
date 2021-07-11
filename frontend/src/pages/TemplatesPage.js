@@ -1,5 +1,4 @@
 import { TemplateCard } from '../components/TemplateCard';
-import { SideNavbar } from '../components/SideNavbar';
 
 export const TemplatePage = ({ configs, currentUserProp, signOutFunc }) => {
 

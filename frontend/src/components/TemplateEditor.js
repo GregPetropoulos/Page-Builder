@@ -57,7 +57,6 @@ export const TemplateEditor = ({ configs }) => {
 			config.thumbnail,
 			html
 		);
-		console.log('response create:page', response)
 		history.push('/');
 	};
 

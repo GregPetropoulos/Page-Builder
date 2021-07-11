@@ -23,9 +23,6 @@ function App() {
   const { currentUser, signOut } = useContext(AuthContext);
 
   console.log('CURRENT USER', currentUser);
-  // if (currentUser === null) {
-  //   return <div>loading</div>;
-  // }
 
   useEffect(() => {
     visitPage();
@@ -46,9 +43,6 @@ function App() {
           <PrivateRoute path='/statistics'>
             <Statistics />
           </PrivateRoute>
-          {/* <PrivateRoute path="/projects">
-						<ProjectsPage/>
-					</PrivateRoute> */}
           <PrivateRoute path='/create/:id'>
             <TemplateEditor
               configs={templates}
