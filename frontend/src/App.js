@@ -1,7 +1,7 @@
 import './App.css';
 import { useContext, useEffect } from 'react';
 import { AuthContext } from './context/AuthContext';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch,} from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { TemplateEditor } from './components/TemplateEditor';
 import { TemplatePage } from './pages/TemplatesPage';
@@ -30,7 +30,10 @@ function App() {
 
   return (
     <div className='gradient'>
+      <BrowserRouter>
       <Navbar currentUserProp={currentUser} signOutFunc={signOut} />
+      </BrowserRouter>
+      
       <BrowserRouter>
         <Switch>
           <PrivateRoute path='/templates'>

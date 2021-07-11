@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logopb from '../images/logopb.png';
-import { Link, useHistory } from 'react-router-dom';
+import {  Link, useHistory } from 'react-router-dom';
 import accountService from '../services/account';
 
 export const Navbar = (props) => {
@@ -31,51 +31,60 @@ export const Navbar = (props) => {
             </a>
           </span>
         </div>
-        <div class="flex-1 pl-2 ml-2">
-        <div class="items-stretch  lg:flex">
-          {(currentUserProp)? (
-            <div className='items-stretch lg:flex content-center mt-5'>
-              <a
-                className='flex items-center align-middle px-4 py-1 rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
-                href='/'
-              >
-                Home
-              </a>
-              <a
-                className='flex-1 btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
-                href='/profilepage'>
-                Profile
-              </a>
-              <a
-                className='flex-1 btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
-                href='/templates'>
-                Templates
-              </a>
-              <a
-                className='btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
-                href='/statistics'
-              >
-                Statistics
-              </a>
-            </div>   
-          ) : (
-            ''
-          )}
+        <div class='flex-1 pl-2 ml-2'>
+          <div class='items-stretch  lg:flex'>
+            {currentUserProp ? (
+              <div className='items-stretch lg:flex content-center mt-5'>
+                <a
+                  className='flex items-center align-middle px-4 py-1 rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
+                  href='/'
+                >
+                  Home
+                </a>
+                <a
+                  className='flex-1 btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
+                  href='/profilepage'
+                >
+                  Profile
+                </a>
+                <a
+                  className='flex-1 btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
+                  href='/templates'
+                >
+                  Templates
+                </a>
+                <a
+                  className='btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
+                  href='/statistics'
+                >
+                  Statistics
+                </a>
+              </div>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
-        </div>
-        {(currentUserProp)? (
+        {currentUserProp ? (
           <div className='inline-flex w-40 mt-5'>
-            <button class="btn btn bg-transparent rounded-btn rounded-md px-1 py-2 flex text-sm uppercase text-gray-900 font-black object-right hover:text-white "
-                href='/'
-                onClick={handleClick}>
-                    Logout
+            <button
+              class='btn btn bg-transparent rounded-btn rounded-md px-1 py-2 flex text-sm uppercase text-gray-900 font-black object-right hover:text-white '
+              href='/'
+              onClick={handleClick}
+            >
+              Logout
             </button>
-            <button className="btn btn rounded-full gradient2 flex items-center justify-center w-10 h-10 mb-3" href='/profilepage'>
-              <span className="text-sm uppercase text-gray-800 font-black">
-                {currentUserProp.firstName ? `${currentUserProp.firstName.charAt(0).toUpperCase()}${currentUserProp.lastName.charAt(0).toUpperCase()}`: currentUserProp.email.slice(0,2)}
-              </span>
-            </button>
+            <div className='w-6/12 sm:w-6/12 px-4'>
+            <Link to='/profilepage'>
+              <img
+                src={currentUserProp.avatar}
+                alt=''
+                className='shadow rounded-full max-w-full h-auto align-middle border-none'
+              />
+              </Link>
+
             </div>
+          </div>
         ) : (
           ''
         )}

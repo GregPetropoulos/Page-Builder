@@ -23,6 +23,14 @@ const User = new Schema({
     about: String,
     github: String,
   },
+  avatar:{
+    type:String,
+  },
+
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 
   pages: [
     {

@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
   const auth = (userData) => {
     console.log('SETTING USER', userData);
-    const user = { id: userData._id, email: userData.email, ...userData.profile };
+    const user = { id: userData._id, email: userData.email, avatar:userData.avatar, ...userData.profile };
     localStorage.setItem('user', JSON.stringify(user));
     setCurrentUser(user);
   };

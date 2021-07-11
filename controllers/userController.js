@@ -1,6 +1,9 @@
 const db = require('../models/User');
 const bcrypt = require('bcrypt');
 
+const gravatar = require('gravatar');
+const normalize = require('normalize-url');
+
 module.exports = {
   loginUser: async (req, res) => {
     const { email, password } = req.body;
@@ -26,7 +29,7 @@ module.exports = {
     }
   },
   signUpUser: async (req, res) => {
-    const { email, password, username } = req.body;
+    const { email, password, avatar, username } = req.body;
     if (email.length <= 4) {
       res.status(400).send({ error: 'Email is too short' });
     } else if (password.length <= 4) {
@@ -35,14 +38,28 @@ module.exports = {
     const user = await db.findOne({ email });
     if (user) {
       res.status(409).send({ error: 'Account already registered' });
+      
     } else {
+      
       bcrypt.hash(password, 10, async (err, hash) => {
         if (err) {
           res.status(400).send({ error: 'Please try again Later' });
         } else {
+          // Get users gravatar
+          const avatar = normalize(
+            gravatar.url(email, {
+              s: '50',
+              r: 'g',
+              d: 'mm',
+            }),
+            { forceHttps: true }
+            );
+            // console.log('user with avatar', user);
+
           const user = {
             email,
             username,
+            avatar,
             password: hash,
           };
           const databaseUser = new db(user);
