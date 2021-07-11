@@ -24,14 +24,14 @@ export const PageCard = ({ userId, thumbnail, name, id }) => {
 	}
 
 	return (
-		<div className="d-flex flex-column justify-content-between template-wrapper border p-2 rounded bg-gray-800 rounded-md">
+		<div className="d-flex flex-column justify-content-between template-wrapper p-2 rounded bg-gray-900 rounded-md mb-4">
 			<img
 				className="img-fluid object-scale-down"
 				src={thumbnailSrc}
 				alt="thumbnail"
 			/>
 			<div className="d-flex flex-column">
-				<p className="template-title text-center text-white mb-3 mt-3">{name}</p>
+				<p className="template-title text-center text-indigo-50 mb-3 mt-3">{name}</p>
 				<div className="d-flex flex-row justify-content-center">
 					<a className="ml-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href={`/page/${id}`}>
 					<img src="https://img.icons8.com/ios-filled/50/000000/view-file.png" width="17px"/>
