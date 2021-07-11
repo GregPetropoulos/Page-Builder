@@ -7,7 +7,7 @@ export const HomePage = (props) => {
 	const { pages } = usePages();
 	return (
 		<div className="">
-			<div className="grid grid-cols-2 p-8 place-items-center mb-4">
+			<div className="grid grid-cols-2 p-8 place-items-center">
 				{ Array.isArray(pages) && pages.length > 0 ? (
 					pages.map(page => (
 						<PageCard
@@ -20,9 +20,9 @@ export const HomePage = (props) => {
 						></PageCard>
 						))
 						) : (
-							<div className="d-flex flex-column gap">
+							<div className="">
 						<h1 className="text-center mt-5">You haven't made any pages yet!</h1>
-						<a href="/templates" className="btn btn-primary ">
+						<a href="/templates" className="btn btn-primary">
 							CLICK HERE TO CREATE A PAGE :)
 						</a>
 					</div>

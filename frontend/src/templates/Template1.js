@@ -3,16 +3,13 @@ import { useEffect, useState } from 'react';
 export const Template1 = (
 	{
 		pageTitle,
-		pageLogoTitle,
 		landingTitle,
 		navItem1,
 		navItem2,
 		navItem3,
 		landingText,
-		landingText2,
 		backgroundColor,
 		buttonText,
-		bannerSrc,
 		footerText,
 	},
 	ref
@@ -42,25 +39,11 @@ export const Template1 = (
 				className="cover-container d-flex h-100 p-3 mx-auto flex-column text-white screen align-content-center"
 				style={{ backgroundColor }}>
 				<header>
-					{/* <div class=" d-flex justify-content-between my-2">
-						<h3 class="masthead-brand"></h3>
-						<nav class="nav justify-content-center">
-							<a class="nav-link active" href="#">
-								{navItem1}
-							</a>
-							<a className="nav-link" href="#">
-								{navItem2}
-							</a>
-							<a className="nav-link" href="#">
-								{navItem3}
-							</a>
-						</nav>
-					</div> */}
 				<nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-indigo-900 mb-3">
 					<div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
 						<div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
 						<a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="#pablo">
-						{pageLogoTitle}
+						{pageTitle}
 						</a>
 						<button class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button">
 							<span class="block relative w-6 h-px rounded-sm bg-white"></span>
@@ -123,31 +106,11 @@ export const Template1 = (
         </div>
 		</div>
 		</main>
-
-				{/* <main role="main" className="mx-auto container my-auto">
-					<h1 className="fs-2 text-center mb-4">{landingTitle}</h1>
-					<p className="fs-5"></p>
-					<div className="d-flex content-center my-5">
-						<img
-							src={thumbnailSrc}
-							className="img-fluid"
-							alt="img"
-							style={{ width: 300 }}
-						/>
-					</div>
-					<p className="fs-5"> {landingText2} </p>
-					<p className="d-flex justify-content-center">
-						<a href="#" className="btn btn-lg btn-secondary">
-							{buttonText}
-						</a>
-					</p>
-				</main> */}
-
-				<footer class="flex items-center justify-center text-indigo-900">
-					<div class="items-center">
-						<p> {footerText} </p>
-					</div>
-				</footer>
+			<footer class="flex items-center justify-center text-indigo-900">
+				<div class="items-center">
+					<p> {footerText} </p>
+				</div>
+			</footer>
 			</div>
 		</div>
 	);
