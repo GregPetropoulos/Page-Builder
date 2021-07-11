@@ -91,7 +91,7 @@ export const templates = [
 			{
 				id: 'landingTitle',
 				name: 'Landing Title',
-				value: 'Landing Title',
+				value: 'Your story starts with us.',
 				type: 'text',
 			},
 			{
@@ -121,7 +121,7 @@ export const templates = [
 			{
 				id: 'landingText',
 				name: 'Landing Text',
-				value: 'Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.',
+				value: 'This is a simple example of a Landing Page you can build using Tailwind Starter Kit. It features multiple CSS components based on the Tailwindcss design system.',
 				type: 'text',
 			},
 			{
@@ -136,20 +136,12 @@ export const templates = [
 				value: 'Template Button',
 				type: 'text',
 			},
-			{
-				id: 'imageDropdown',
-				name: 'Image',
-				value: 'screenshot.png',
-				options: ['screenshot.png', 'cover.png', 'bootstrap.png','acrylicpaint.jpg','adorablekids.jpg'
-				, 'antiqueart.jpg','antiqueartwall.jpg', 'architecture3.jpg','architecture5.jpg',
-				'architecturewhite.jpg', 'architecturewhite2.jpg', 'art2.jpg', 'art3.jpg', 'art4.jpg', 'artmueseum.jpg',
-				'artpaint.jpg', 'baby1.jpg', 'balloons.jpg', 'bridgeandtrees.jpg', 'canyon.jpg', 'cellphone.jpg', 'cityview.jpg',
-				'clouds.jpg', 'colorfulbirds.jpg', 'colors1.jpg', 'computerdesk.jpg', 'contemporaryart.jpg', 'everythingisconnected.jpg',
-				'foreignvehicle.jpg', 'forest.jpg', 'hello.jpg', 'lights.jpg', 'love1.jpg', 'model1.jpg', 'multicoloredfish.jpg',
-				'nature1.jpg', 'notebook.jpg', 'room.jpg', 'royalbuilding.jpg', 'scenery.jpg', 'scenery2.jpg', 'scenery3.jpg', 'scenery5.jpg', 'spices.jpg',
-				'statues.jpg', 'videoedit.jpg', 'waterfall.jpg', 'watermountains.jpg', 'wedding.jpg', 'whereIwanttobe.jpg', 'workandcoffee.jpg'],
-				type: 'dropdown',
-			},
+            {
+                id: 'bannerSrc',
+                name: 'Banner source',
+                value: 'https://cdn.theatlantic.com/media/mt/culture_test/the%20office%20finale%20ending.jpg',
+                type: 'text',
+            },
 			{
 				id: 'landingText2',
 				name: 'Landing Text 2',

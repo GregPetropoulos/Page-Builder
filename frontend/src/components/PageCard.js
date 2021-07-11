@@ -17,7 +17,7 @@ export const PageCard = ({ thumbnail, name, id }) => {
 	}
 
 	return (
-		<div className="d-flex flex-column justify-content-between template-wrapper p-2 rounded bg-gray-800 rounded-md mb-4">
+		<div className="d-flex flex-column justify-content-between template-wrapper p-2 rounded bg-gray-900 rounded-md mb-4">
 			<img
 				className="img-fluid object-scale-down"
 				src={thumbnailSrc}

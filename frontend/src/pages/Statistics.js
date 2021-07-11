@@ -48,7 +48,7 @@ export const Statistics = () => {
 					'rgba(255, 206, 86, 1)',
 					'rgba(75, 192, 192, 1)',
 					'rgba(153, 102, 255, 1)',
-					'rgba(255, 159, 64, 1)',
+					'rgba(15, 37, 66, 1)',
 				],
 				borderWidth: 1,
 			},
@@ -107,12 +107,12 @@ export const Statistics = () => {
 							fontWeight: 'bold',
 						}}
 					>
-						Accounts created
+						Accounts Created
 					</span>
 					<span
 						style={{
 							fontSize: 17,
-							color: '#2aa745',
+							color: '#0f2542',
 						}}
 					>
 						{stats.accountsCreated
@@ -139,12 +139,12 @@ export const Statistics = () => {
 							fontWeight: 'bold',
 						}}
 					>
-						Pages created
+						Pages Created
 					</span>
 					<span
 						style={{
 							fontSize: 17,
-							color: '#2aa745',
+							color: '#0f2542',
 						}}
 					>
 						{stats.pagesCreated ? stats.pagesCreated : 'Loading...'}
@@ -174,7 +174,7 @@ export const Statistics = () => {
 					<span
 						style={{
 							fontSize: 17,
-							color: '#2aa745',
+							color: '#0f2542',
 						}}
 					>
 						{stats.pageVisits >= 0
