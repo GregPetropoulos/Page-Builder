@@ -72,16 +72,13 @@ module.exports = {
   },
 
   deleteUser: async (req, res) => {
-    console.log('req params', req.params);
-
     const id = req.params.id;
-    console.log('iddd', id)
-
     try {
       const response = await db.findOneAndDelete({ _id: id });
       console.log('delete backend res', response);
       if (response._id) {
-        return res.json({ message: 'delete user success' });
+        console.log('oooo', response._id)
+        return res.send({ message: 'delete user success' });
       }
     } catch (err) {
       res.sendStatus(500);
