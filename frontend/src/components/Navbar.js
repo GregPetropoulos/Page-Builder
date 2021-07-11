@@ -70,9 +70,16 @@ export const Navbar = (props) => {
                 onClick={handleClick}>
                     Logout
             </button>
-            <button className="btn btn rounded-full gradient2 flex items-center justify-center w-10 h-10 mb-3" href='/profilepage'>
+            <button className="btn btn rounded-full gradient2 flex items-center justify-center w-10 h-10 mb-3" 
+            href='/profilepage'
+            >
               <span className="text-sm uppercase text-gray-800 font-black">
-                {currentUserProp.firstName ? `${currentUserProp.firstName.charAt(0).toUpperCase()}${currentUserProp.lastName.charAt(0).toUpperCase()}`: currentUserProp.email.slice(0,2)}
+                {currentUserProp.firstName 
+                ? `${currentUserProp.firstName
+                .charAt(0)
+                .toUpperCase()}${currentUserProp.lastName
+                .charAt(0).toUpperCase()}`
+                : currentUserProp.email.slice(0,2)}
               </span>
             </button>
             </div>

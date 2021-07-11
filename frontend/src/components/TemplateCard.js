@@ -13,7 +13,7 @@ export const TemplateCard = ({ thumbnail, name, id }) => {
 
 	return (
 		<div
-			className="d-flex flex-column template-wrapper pointer p-2 rounded justify-content-between bg-gray-900 rounded-md"
+			className="d-flex flex-column template-wrapper gradient2 pointer p-2 rounded justify-content-between rounded bg-white rounded-md mb-4 shadow-2xl divide-y divide-gray-200"
 			onClick={() => history.push(`/create/${id}`)}
 		>
 			<img
@@ -21,7 +21,7 @@ export const TemplateCard = ({ thumbnail, name, id }) => {
 				src={thumbnailSrc}
 				alt="thumbnail"
 			/>
-			<p className="template-title text-center text-indigo-50">{name}</p>
+			<p className="template-title pt-2 my-3 text-center text-gray-900 text-sm uppercase font-black items-center">{name}</p>
 		</div>
 	);
 };

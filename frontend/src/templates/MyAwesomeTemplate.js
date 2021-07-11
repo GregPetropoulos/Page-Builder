@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+
 
 export const MyAwesomeTemplate = ({ 
 	pageTitle, 
@@ -12,8 +12,8 @@ export const MyAwesomeTemplate = ({
 
 
 	return (
-	<div class="grid grid-cols-5 w-full border-black">
-			<h1 class="col-start-4 col-end-4 text-white">{pageTitle}</h1>
+	<div class="grid grid-cols-5 w-full h-full border-black">
+		
 		<div class="overflow-y-auto overflow-x-hidden flex-grow bg-white col-start-1 col-end-1 z-20 shadow-md
 		">
         <ul class="flex flex-col py-6 space-y-1">
@@ -72,17 +72,48 @@ export const MyAwesomeTemplate = ({
             </li>
         </ul>
         </div>
-		<div className="col-span-4 w-full">
-		<img src= {bannerSrc} alt="img" />
-				<p class="col-start-1 col-end-5">Welcome to our site. We hope to provide you with all of your needs</p>		
-			</div>
-			<footer className="d-flex justify-content-center">
-					<div className="inner">
+		<div className="col-span-4 w-full h-full bg-fixed bg-blend-darken items-center justify-center" 
+		style={{ 
+			backgroundImage: `url('${bannerSrc}')`,
+			height: "100vh",
+		}}>
+		
+{/* <ul class="navbar mb-2 shadow-lg inline-block">
+  <li class="inline-block items-stretch lg:flex">
+    <a class="btn btn-square btn-ghost text-white items-stretch">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">           
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>               
+      </svg>
+    </a>
+  </li> 
+
+  <li class="inline-block">
+    <a class="btn btn-square btn-ghost text-white items-stretch">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">             
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>             
+      </svg>
+    </a>
+  </li> 
+  <li class="inline-block text-center">
+    <a class="btn btn-square btn-ghost text-white items-stretch">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">     
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>                     
+      </svg>
+    </a>
+  </li> 
+</ul> */}
+		<div class="text-center mt-64">
+		<h1 class="text-white text-6xl font-black items-center">{pageTitle}</h1>
+				<p class="text-white">Welcome to our site. We hope to provide you with all of your needs</p>		
+		</div>
+		<footer className="text-center text-white mt-80 object-bottom">
 						<p> {footerText} </p>
-					</div>
+					
 			</footer>
 		</div>
-		
+
+		</div>
+
 
 	);
 };
