@@ -31,7 +31,7 @@ export const PageCard = ({ userId, thumbnail, name, id }) => {
 				alt="thumbnail"
 			/>
 			<div className="d-flex flex-column divide-y divide-gray-200">
-				<p className="template-title text-center text-gray-900 items-center mb-2 mt-3">{name}</p>
+				<p className="template-title text-center text-gray-900 text-sm uppercase font-black items-center mb-2 mt-3">{name}</p>
 				<div className="d-flex flex-row items-center justify-content-center">
 					<a className="ml-2 gradient2 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mt-2" href={`/page/${id}`}>
 					<img src="https://img.icons8.com/ios-filled/50/000000/view-file.png" width="17px"/>
