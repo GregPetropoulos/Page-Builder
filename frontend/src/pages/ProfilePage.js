@@ -6,7 +6,7 @@ export const ProfilePage = ({ currentUserProp, signOutFunc }) => {
   console.log('hit', currentUserProp);
   return (
     <div className='grid grid-cols-5 grid-rows-1 p-8 space-x-4'>
-      <div className='col-span-4 row-span-1'>
+      <div className='col-span-5 row-span-1 mr-2'>
         <ProfileForm
           firstName=''
           lastName=''
@@ -14,7 +14,12 @@ export const ProfilePage = ({ currentUserProp, signOutFunc }) => {
           github=''
           email={currentUserProp.email}
         />
-        <DeleteAccount currentUser={currentUserProp} />
+        <div className="bg-white pb-2 rounded-b-md">
+        <DeleteAccount 
+        className="ml-20 mb-4"
+        currentUser={currentUserProp} />
+        </div>
+        
       </div>
     </div>
   );

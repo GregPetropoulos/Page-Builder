@@ -17,14 +17,14 @@ export const PageCard = ({ thumbnail, name, id }) => {
 	}
 
 	return (
-		<div className="d-flex flex-column justify-content-between template-wrapper border p-2 rounded bg-gray-800 rounded-md">
+		<div className="d-flex flex-column justify-content-between template-wrapper p-2 rounded bg-gray-900 rounded-md mb-4">
 			<img
 				className="img-fluid object-scale-down"
 				src={thumbnailSrc}
 				alt="thumbnail"
 			/>
 			<div className="d-flex flex-column">
-				<p className="template-title text-center">{name}</p>
+				<p className="template-title text-center text-indigo-50">{name}</p>
 				<div className="d-flex flex-row justify-content-center">
 					<a className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href={`/page/${id}`}>
 						View

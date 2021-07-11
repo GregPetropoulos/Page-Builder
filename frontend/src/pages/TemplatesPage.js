@@ -4,7 +4,7 @@ import { SideNavbar } from '../components/SideNavbar';
 export const TemplatePage = ({ configs, currentUserProp, signOutFunc }) => {
 
   return (
-    <div className="grid grid-cols-5 grid-rows-1 p-8 space-x-4">
+    <div className="grid grid-cols-2 p-8 place-items-center mb-4">
       <div className="flex flex-row gap p-5 flex-wrap justify-content-center row-span-1">
         {configs.map((template) => (
           <TemplateCard

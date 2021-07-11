@@ -57,11 +57,11 @@ export const TemplatePanel = ({ fields, onChange, onSave }) => {
 	return (
 		<Draggable
 			position={{ x: xAxis, y: yAxis }}
-			className="flex-wrap px-3 py-2 bg-indigo-700 text-white rounded-lg"
+			className="flex-wrap grid col-start-1 col-end-2 space-x-4 px-3 py-2 bg-indigo-700 text-white rounded-lg z-40"
 		>
-			<h2 className="col-span-2 text-center border-b-2">Editor</h2>
+			<h2 className="col-span-2 text-center text-md uppercase font-black border-b-2">Your Template Editor</h2>
 			<div
-				className="grid grid-cols-2 gap-2"
+				className="grid grid-cols-2 gap-2 text-gray-900 text-sm uppercase pb-2"
 				style={{ cursor: 'default' }}
 				onPointerDown={ev => ev.stopPropagation()}
 			>
