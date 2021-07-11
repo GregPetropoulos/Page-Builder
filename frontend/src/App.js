@@ -37,7 +37,6 @@ function App() {
             <TemplatePage
               configs={templates}
               currentUserProp={currentUser}
-              signOutFunc={signOut}
             />
           </PrivateRoute>
           <PrivateRoute path='/statistics'>
@@ -47,18 +46,17 @@ function App() {
             <TemplateEditor
               configs={templates}
               currentUserProp={currentUser}
-              signOutFunc={signOut}
             />
           </PrivateRoute>
           <PrivateRoute path='/page/:id'>
-            <PageView currentUserProp={currentUser} signOutFunc={signOut} />
+            <PageView currentUserProp={currentUser}/>
           </PrivateRoute>
           <PrivateRoute path='/profilepage'>
-            <ProfilePage currentUserProp={currentUser} signOutFunc={signOut} />
+            <ProfilePage currentUserProp={currentUser} signOutFunc={signOut}/>
           </PrivateRoute>
           <Route path='/'>
             {currentUser && currentUser.id ? (
-              <HomePage currentUserProp={currentUser} signOutFunc={signOut} />
+              <HomePage currentUserProp={currentUser} />
             ) : (
               <LandingPage />
             )}

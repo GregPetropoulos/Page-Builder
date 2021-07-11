@@ -9,12 +9,13 @@ export const AuthProvider = ({ children }) => {
 
   const auth = (userData) => {
     console.log('SETTING USER', userData);
-    const user = { id: userData._id, ...userData.profile };
+    const user = { id: userData._id, email: userData.email, ...userData.profile };
     localStorage.setItem('user', JSON.stringify(user));
     setCurrentUser(user);
   };
 
   const signOut = () => {
+    console.log('here')
     localStorage.removeItem('user');
     setCurrentUser({});
     window.location.reload();

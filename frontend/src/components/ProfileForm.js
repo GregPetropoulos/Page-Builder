@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import accountServices from '../services/account';
+import { DeleteAccount } from '../components/DeleteAccount';
 // https://blog.logrocket.com/forms-in-react-in-2020/
 // As it turns out, the browser handles form state internally by default,
 // and we can leverage that to simplify our code!
 
 // https://mattboldt.com/2020/05/02/formdata-with-react-hooks-and-fetch/
 
-export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
-  // console.log('email', email);
+export const ProfileForm = ({ firstName, lastName, about, github, email, userId, signOutFunc }) => {
   const [profile, setProfile] = useState({
     firstName: '',
     lastName: '',
@@ -39,17 +39,6 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
     }
   };
 
-  // const handleDelete = async () => {
-  //   console.log('helllo')
-  //   try {
-  //     const response = await accountServices.ApiDeleteUser(email);
-  //     console.log('dleete front', response);
-  //   } catch (e) {
-  //     console.error({ e });
-  //   }
-  // };
-  
-
   return (
     <form id='form'>
       <div className='bg-white dark:bg-gray-800 rounded-t-md'>
@@ -57,7 +46,7 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
           <div className='xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800'>
             <div className='flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center ml-8'>
               <p className='text-lg text-gray-800 dark:text-gray-100 font-bold'>
-                Profile
+                Profile Form
               </p>
               <div className='ml-2 cursor-pointer text-gray-600 dark:text-gray-400'>
                 <svg
@@ -91,7 +80,6 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
                       id='FirstName'
                       onChange={inputsHandler}
                       name='firstName'
-                      // value={profile.firstName}
                       className='border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400'
                     />
                   </div>
@@ -106,7 +94,6 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
                       type='text'
                       id='LastName'
                       onChange={inputsHandler}
-                      // value={profile.lastName}
                       name='lastName'
                       className='border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400'
                     />
@@ -124,7 +111,6 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
                   id='about'
                   name='about'
                   onChange={inputsHandler}
-                  // value={profile.about}
                   className='bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400'
                   placeholder='Let the world know who you are'
                   rows={5}
@@ -145,7 +131,6 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
                       id='Github'
                       onChange={inputsHandler}
                       name='github'
-                      // value={profile.firstName}
                       className='border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400'
                     />
                 </div>
@@ -165,6 +150,11 @@ export const ProfileForm = ({ firstName, lastName, about, github, email }) => {
           >
             Save
           </button>
+          <DeleteAccount
+            className="ml-20 mb-4"
+            userId={userId}
+            signOutFunc={signOutFunc}
+          />
         </div>
       </div>
     </form>

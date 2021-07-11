@@ -7,7 +7,6 @@ export const Navbar = (props) => {
   const { currentUserProp, signOutFunc } = props;
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
-  console.log('cu', currentUserProp);
   const ApiLogOut = accountService.ApiLogOut;
 
   const handleClick = (e) => {
@@ -73,7 +72,8 @@ export const Navbar = (props) => {
             </button>
             <button className="btn btn rounded-full gradient2 flex items-center justify-center w-10 h-10 mb-3" href='/profilepage'>
               <span className="text-sm uppercase text-gray-800 font-black">
-                KS</span>
+                {currentUserProp.firstName ? `${currentUserProp.firstName.charAt(0).toUpperCase()}${currentUserProp.lastName.charAt(0).toUpperCase()}`: currentUserProp.email.slice(0,2)}
+              </span>
             </button>
             </div>
         ) : (

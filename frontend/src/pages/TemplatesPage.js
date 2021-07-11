@@ -1,6 +1,6 @@
 import { TemplateCard } from '../components/TemplateCard';
 
-export const TemplatePage = ({ configs, currentUserProp, signOutFunc }) => {
+export const TemplatePage = ({ configs }) => {
 
   return (
     <div className="grid grid-cols-2 p-8 place-items-center mb-4">
