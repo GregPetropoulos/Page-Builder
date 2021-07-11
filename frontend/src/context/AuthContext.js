@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import accountService from '../services/account';
+import React, { useState } from 'react';
 
 export const AuthContext = React.createContext();
 
@@ -18,6 +17,7 @@ export const AuthProvider = ({ children }) => {
   const signOut = () => {
     localStorage.removeItem('user');
     setCurrentUser({});
+    window.location.reload();
   };
 
   return (

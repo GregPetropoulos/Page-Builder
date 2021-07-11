@@ -1,5 +1,5 @@
 import './App.css';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from './context/AuthContext';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
@@ -12,11 +12,21 @@ import { templates } from './templates/templates';
 import { ProfilePage } from './pages/ProfilePage';
 import { Footer } from './components/Footer';
 import { PrivateRoute } from './PrivateRoute';
+import { Statistics } from './pages/Statistics';
+import axios from 'axios';
+
+const visitPage = async () => {
+  await axios.post('/api/visit', {});
+};
 
 function App() {
   const { currentUser, signOut } = useContext(AuthContext);
 
   console.log('CURRENT USER', currentUser);
+
+  useEffect(() => {
+    visitPage();
+  }, []);
 
   return (
     <div className='bg-gray-200'>
@@ -29,6 +39,9 @@ function App() {
               currentUserProp={currentUser}
               signOutFunc={signOut}
             />
+          </PrivateRoute>
+          <PrivateRoute path='/statistics'>
+            <Statistics />
           </PrivateRoute>
           <PrivateRoute path='/create/:id'>
             <TemplateEditor

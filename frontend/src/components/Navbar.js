@@ -7,20 +7,19 @@ export const Navbar = (props) => {
   const { currentUserProp, signOutFunc } = props;
   const history = useHistory();
   const [isLogin, setLogin] = useState(false);
-  console.log('cu', currentUserProp)
+  console.log('cu', currentUserProp);
   const ApiLogOut = accountService.ApiLogOut;
 
   const handleClick = (e) => {
     e.preventDefault();
     setLogin(!isLogin);
     if (props.currentUserProp) {
-      const { email, password } = props.currentUserProp
+      const { email, password } = props.currentUserProp;
       ApiLogOut({ email, password });
     }
     if (history) history.push('/', { noUser: true });
     signOutFunc();
   };
-
 
   return (
     <div className='p-3'>
@@ -33,36 +32,46 @@ export const Navbar = (props) => {
           </span>
         </div>
         <div className='flex'>
-          {(currentUserProp)? (
+          {currentUserProp ? (
             <div className='items-stretch hidden lg:flex content-center'>
               <a
                 className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black'
-                href='/'>
+                href='/'
+              >
                 Home
               </a>
               <a
-                className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black px-3 py-2'
-                href='/profilepage'>
+                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                href='/profilepage'
+              >
                 Profile
               </a>
               <a
-                className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black px-3 py-2'
-                href='/templates'>
+                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                href='/templates'
+              >
                 Templates
               </a>
               <a
-                className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black px-3 py-2'
+                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                href='/statistics'
+              >
+                Statistics
+              </a>
+              <a
+                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
                 href='/'
-                onClick={handleClick}>
+                onClick={handleClick}
+              >
                 Logout
               </a>
-            </div>   
+            </div>
           ) : (
             ''
           )}
         </div>
-        {(currentUserProp)? (
-          <div className='flex float-right mr-5'>
+        {currentUserProp ? (
+          <div className='flex float-right' style={{ alignItems: 'center' }}>
             <div className='avatar'>
               <div className='rounded-xl'>
                 <img
