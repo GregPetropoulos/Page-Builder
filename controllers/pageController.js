@@ -73,7 +73,6 @@ module.exports = {
       const { name, thumbnail, html } = req.body;
       const page = { name, thumbnail, html };
       const id = req.session.user;
-      console.log('PAGE TO SAVE', page)
 
       try {
         await db.updateOne(
@@ -90,7 +89,22 @@ module.exports = {
         res.sendStatus(500);
       }
     }),
-};
 
-// From line 27
-// , { "pages.html": 0 }
+  deletePage: async (req, res) => {
+    const { id, userId } = req.params
+      try {
+        await db.updateOne(
+          { _id: userId },
+          {
+            $pull: {
+              pages:{ _id: id},
+            },
+          }
+        );
+        res.sendStatus(200);
+      } catch (err) {
+        console.log(err);
+        res.sendStatus(500);
+      }
+  }
+};

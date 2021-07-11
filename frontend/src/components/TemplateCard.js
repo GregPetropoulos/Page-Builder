@@ -13,15 +13,15 @@ export const TemplateCard = ({ thumbnail, name, id }) => {
 
 	return (
 		<div
-			className="d-flex flex-column template-wrapper pointer border p-2 rounded justify-content-between"
+			className="d-flex flex-column template-wrapper pointer p-2 rounded justify-content-between bg-gray-900 rounded-md"
 			onClick={() => history.push(`/create/${id}`)}
 		>
 			<img
-				className="img-fluid img img-wrapper"
+				className="img-fluid object-scale-down"
 				src={thumbnailSrc}
 				alt="thumbnail"
 			/>
-			<p className="template-title text-center">{name}</p>
+			<p className="template-title text-center text-indigo-50">{name}</p>
 		</div>
 	);
 };
