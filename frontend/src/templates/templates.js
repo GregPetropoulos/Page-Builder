@@ -4,67 +4,25 @@ import { Template1 } from './Template1';
 export const templates = [
 	{
 		id: 1,
-		thumbnail: 'bootstrap.png',
+		thumbnail: 'LandingPageTemplate2.png',
 		name: 'Landing Page Template 2',
 		fields: [
 			{
 				id: 'pageTitle',
 				name: 'Page Title',
-				value: 'Welcome Page',
+				value: 'Impossible is Possible.©',
 				type: 'text',
 			},
 			{
                 id: 'bannerSrc',
                 name: 'Banner source',
-                value: 'https://images.pexels.com/photos/3780104/pexels-photo-3780104.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                value: 'https://images.pexels.com/photos/2478248/pexels-photo-2478248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 type: 'text',
             },
 			{
-				id: 'landingTitle',
-				name: 'Landing Title',
-				value: 'Landing Title',
-				type: 'text',
-			},
-			{
-				id: 'navItem1',
-				name: 'Navigation Item 1',
-				value: 'Nav Item 1',
-				type: 'text',
-			},
-			{
-				id: 'navItem2',
-				name: 'Navigation Item 2',
-				value: 'Nav Item 2',
-				type: 'text',
-			},
-			{
-				id: 'navItem3',
-				name: 'Navigation Item 3',
-				value: 'Nav Item 3',
-				type: 'text',
-			},
-			{
-				id: 'navBackground',
-				name: 'Navigation Background',
-				value: '#444',
-				type: 'color',
-			},
-			{
-				id: 'pageLogoTitle',
-				name: 'Logo Title',
-				value: 'Logo Title',
-				type: 'text',
-			},
-			{
 				id: 'landingText',
 				name: 'Landing Text',
-				value: 'Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.',
-				type: 'text',
-			},
-			{
-				id: 'buttonText',
-				name: 'Button Text',
-				value: 'Learn More',
+				value: 'Welcome to our site. We hope to provide you with all of your needs',
 				type: 'text',
 			},
 			{
