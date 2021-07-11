@@ -23,11 +23,12 @@ export const Navbar = (props) => {
 
   return (
     <div className='p-3'>
-      <div className='flex flex-wrap navbar mb-2 shadow-lg bg-gray-900 text-neutral-content rounded-xl'>
-        <div className='flex-none px-2 mx-2 align-middle'>
-          <span className='text-lg font-bold'>
+      <div className='flex flex-wrap navbar mb-2 bg-transparent text-neutral-content w-full'>
+        <div className='flex px-2 mx-2'>
+          <span className='flex-row text-xl lg:text-3xl font-black text-white w-full mt-4'>
             <a href='/'>
-              <img src={logopb} alt='logopb' className='w-20 h-20' />
+              <img src={logopb} alt='logopb' className='w-8 h-8 inline-block' />
+              Build-A-Page™
             </a>
           </span>
         </div>
@@ -36,23 +37,23 @@ export const Navbar = (props) => {
           {(currentUserProp)? (
             <div className='items-stretch lg:flex content-center mt-5'>
               <a
-                className='flex items-center align-middle text-sm uppercase text-indigo-50 font-black'
+                className='flex items-center align-middle px-4 py-1 rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
                 href='/'
               >
                 Home
               </a>
               <a
-                className='flex-1 btn btn-ghost btn-sm rounded-btn pl-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                className='flex-1 btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
                 href='/profilepage'>
                 Profile
               </a>
               <a
-                className='flex-1 btn btn-ghost btn-sm rounded-btn pl-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                className='flex-1 btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
                 href='/templates'>
                 Templates
               </a>
               <a
-                className='btn btn-ghost btn-sm rounded-btn px-3 py-2 flex items-center text-sm uppercase text-indigo-50 font-black'
+                className='btn btn-ghost btn-sm rounded-btn px-4 py-1 flex items-center rounded-md text-sm uppercase text-gray-900 font-black hover:text-white hover:bg-gray-700'
                 href='/statistics'
               >
                 Statistics
@@ -65,12 +66,12 @@ export const Navbar = (props) => {
         </div>
         {(currentUserProp)? (
           <div className='inline-flex w-40 mt-5'>
-            <button class="btn btn-ghost btn-sm rounded-btn pr-1 py-2 flex text-sm uppercase text-indigo-50 font-black object-right"
+            <button class="btn btn bg-transparent rounded-btn rounded-md px-1 py-2 flex text-sm uppercase text-gray-900 font-black object-right hover:text-white "
                 href='/'
                 onClick={handleClick}>
                     Logout
             </button>
-            <button className="btn btn rounded-full bg-white flex items-center justify-center w-10 h-10 mb-3" href='/profilepage'>
+            <button className="btn btn rounded-full gradient2 flex items-center justify-center w-10 h-10 mb-3" href='/profilepage'>
               <span className="text-sm uppercase text-gray-800 font-black">
                 KS</span>
             </button>

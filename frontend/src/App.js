@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <div className='bg-gradient-to-t from-gray-200 to-gray-900'>
+    <div className='gradient'>
       <Navbar currentUserProp={currentUser} signOutFunc={signOut} />
       <BrowserRouter>
         <Switch>

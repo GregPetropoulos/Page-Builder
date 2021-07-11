@@ -6,14 +6,8 @@ import { TemplatePanel } from './TemplatePanel';
 const TemplateProvider = forwardRef(({ children }, ref) => {
 	return (
 		<div ref={ref}>
-			{/* <link
-				href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-				rel="stylesheet"
-				integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-				crossorigin="anonymous"
-			></link> */}
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/tailwind.css"/>
 
+			<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
 			{children}
 		</div>
 	);
