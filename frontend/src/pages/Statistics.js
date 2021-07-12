@@ -79,6 +79,7 @@ export const Statistics = () => {
 				padding: 16,
 				display: 'flex',
 				flexDirection: 'column',
+				height: '100vh'
 			}}
 		>
 			<div
