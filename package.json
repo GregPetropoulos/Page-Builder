@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "concurrently \"nodemon --ignore ./frontend/ server.js\" \"cd frontend && npm start\"",
-    "build": "cd frontend && npm install && npm run build"
+    "build": "cd frontend && npm install && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
