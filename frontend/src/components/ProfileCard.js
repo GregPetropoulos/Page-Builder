@@ -4,7 +4,7 @@ export const ProfileCard = (props) => {
     console.log('dss', props.currentUserProp)
     const { id, firstName, lastName, about, github, email} = props.currentUserProp
     return (
-        <div className="bg-white rounded-lg p-6 ">
+        <div className="bg-white rounded-t-lg p-6 ">
             <div className="container mx-auto">
                 <div className='flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center ml-8'>
                 <p className='text-lg text-gray-800 dark:text-gray-100 font-bold'>

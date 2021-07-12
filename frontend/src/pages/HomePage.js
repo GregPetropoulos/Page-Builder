@@ -6,7 +6,7 @@ export const HomePage = (props) => {
 	const { id } = props.currentUserProp
 	const { pages } = usePages();
 	return (
-		<div className="">
+		<div className="" style={{ height: "100vh"}}>
 			<div className="grid grid-cols-2 p-8 place-items-center">
 				{ Array.isArray(pages) && pages.length > 0 ? (
 					pages.map(page => (
@@ -21,7 +21,7 @@ export const HomePage = (props) => {
 						))
 						) : (
 							<div className="">
-						<h1 className="text-center mt-5">You haven't made any pages yet!</h1>
+						<h1 className="text-center">You haven't made any pages yet!</h1>
 						<a href="/templates" className="btn btn-primary">
 							CLICK HERE TO CREATE A PAGE :)
 						</a>
