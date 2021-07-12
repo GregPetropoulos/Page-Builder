@@ -20,8 +20,8 @@ export const HomePage = (props) => {
 						></PageCard>
 						))
 						) : (
-							<div className="">
-						<h1 className="text-center mt-5">You haven't made any pages yet!</h1>
+							<div className="" style={{ height: "100vh"}}>
+						<h1 className="text-center">You haven't made any pages yet!</h1>
 						<a href="/templates" className="btn btn-primary">
 							CLICK HERE TO CREATE A PAGE :)
 						</a>
