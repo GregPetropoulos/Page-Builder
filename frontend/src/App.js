@@ -57,9 +57,12 @@ function App() {
           </PrivateRoute>
           <Route path='/'>
             {currentUser && currentUser.id ? (
+              
               <HomePage currentUserProp={currentUser} />
             ) : (
-              <LandingPage />
+              <div style={{height: '100vh'}}>
+                <LandingPage />
+              </div>
             )}
           </Route>
         </Switch>
