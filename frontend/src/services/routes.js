@@ -8,7 +8,7 @@ export const routes = {
   getUser: (id) => `api/users/${id}`,
 
   //page routes
-  fetchPages: () => `/api/page/pages`,
+  fetchPages: id => `/api/page/pages/${id}`,
   viewPage: id => `/api/page/one/${id}`,
   createPage: () => `/api/page/create`,
   download: id => `/api/page/${id}/download`,

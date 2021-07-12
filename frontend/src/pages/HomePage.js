@@ -4,7 +4,7 @@ import { PageCard } from '../components/PageCard';
 export const HomePage = (props) => {
 	console.log('props', props)
 	const { id } = props.currentUserProp
-	const { pages } = usePages();
+	const { pages } = usePages(id);
 	return (
 		<div className="" style={{ height: "100vh"}}>
 			<div className="grid grid-cols-2 p-8 place-items-center">

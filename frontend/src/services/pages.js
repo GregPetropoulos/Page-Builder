@@ -14,8 +14,8 @@ const createPage = async (name, thumbnail, html) => {
 	}
 };
 
-const fetchPages = async () => {
-	const response = await axios.get(routes.fetchPages(), { withCredentials: true });
+const fetchPages = async (id) => {
+	const response = await axios.get(routes.fetchPages(id), { withCredentials: true });
 	return response.data;
 	
 };

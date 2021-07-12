@@ -32,7 +32,7 @@ module.exports = {
   },
 
   findAllPages: async (req, res) => {
-    const id = req.session.user;
+    const id = req.params.id;
     console.log(id);
     try {
       const user = await db.findOne({ _id: id },{ pages: true });

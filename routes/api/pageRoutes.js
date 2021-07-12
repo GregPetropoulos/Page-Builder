@@ -4,7 +4,7 @@ const pageController = require("../../controllers/pageController");
 
 // SERVE HTML 
 // FIND ALL PAGES OF A USER
-router.get("/pages", pageController.findAllPages)
+router.get("/pages/:id", pageController.findAllPages)
 
 // FIND USERS CORRESPONDING PAGE ID
 //: The route was too similar to the above get request changed to "/one/:id/""
