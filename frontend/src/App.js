@@ -30,11 +30,9 @@ function App() {
 
   return (
     <div className='gradient'>
+ 
       <BrowserRouter>
       <Navbar currentUserProp={currentUser} signOutFunc={signOut} />
-      </BrowserRouter>
-      
-      <BrowserRouter>
         <Switch>
           <PrivateRoute path='/templates'>
             <TemplatePage

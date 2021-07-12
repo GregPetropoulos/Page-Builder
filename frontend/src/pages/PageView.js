@@ -16,8 +16,8 @@ export const PageView = (props) => {
     }, []);
   
   return (
-    <div className="grid grid-cols-5 grid-rows-4 p-8 space-x-4">
-        <div className="col-span-4">
+    <div className="grid grid-cols-5 p-8 space-x-4">
+        <div className="col-span-5">
           {htmlData ?  
            (<div dangerouslySetInnerHTML={{__html: `${htmlData}`}}></div>)
            :''

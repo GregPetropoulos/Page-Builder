@@ -41,8 +41,8 @@ export const ProfileForm = ({ firstName, lastName, about, github, email, userId,
 
   return (
     <form id='form'>
-      <div className='bg-white dark:bg-gray-800 rounded-t-md'>
-        <div className='container mx-auto bg-white dark:bg-gray-800 rounded-md'>
+      <div className='bg-white dark:bg-gray-800'>
+        <div className='container mx-auto bg-white dark:bg-gray-800'>
           <div className='xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800'>
             <div className='flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center ml-8'>
               <p className='text-lg text-gray-800 dark:text-gray-100 font-bold'>
@@ -139,7 +139,7 @@ export const ProfileForm = ({ firstName, lastName, about, github, email, userId,
         </div>
       </div>
       <div className='xl:w-full'>
-        <div className='w-full py-4 sm:px-0 bg-white dark:bg-gray-800 flex'>
+        <div className='w-full py-4 sm:px-0 bg-white dark:bg-gray-800 flex rounded-b-lg'>
           <button className='bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 dark:bg-gray-700 rounded text-gray-900 dark:text-gray-900 px-6 py-2 text-xs ml-6'>
             Cancel
           </button>
@@ -150,11 +150,13 @@ export const ProfileForm = ({ firstName, lastName, about, github, email, userId,
           >
             Save
           </button>
+          <div className="rounded-b-lg">
           <DeleteAccount
             className="ml-20 mb-4"
             userId={userId}
             signOutFunc={signOutFunc}
           />
+          </div>
         </div>
       </div>
     </form>
