@@ -1,0 +1,2 @@
+(this["webpackJsonppage-builder"]=this["webpackJsonppage-builder"]||[]).push([[58],{283:function(e,i,p){"use strict";p.r(i),i.default=p.p+"static/media/videoedit.9e8e1c64.jpg"}}]);
+//# sourceMappingURL=58.8668eb0f.chunk.js.map

@@ -1,0 +1,2 @@
+(this["webpackJsonppage-builder"]=this["webpackJsonppage-builder"]||[]).push([[27],{252:function(e,p,a){"use strict";a.r(p),p.default=a.p+"static/media/bookpages.9a4f0c1c.jpg"}}]);
+//# sourceMappingURL=27.e398a172.chunk.js.map

@@ -1,0 +1,2 @@
+(this["webpackJsonppage-builder"]=this["webpackJsonppage-builder"]||[]).push([[50],{275:function(e,i,a){"use strict";a.r(i),i.default=a.p+"static/media/royalbuilding.e0b0a3df.jpg"}}]);
+//# sourceMappingURL=50.4172ee3c.chunk.js.map
