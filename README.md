@@ -12,6 +12,28 @@ Build A Page is an application where the user can quickly and easily build eye c
 <!-- ## Pitch Presentation
 [Presentaton](https://docs.google.com/presentation/d/e/2PACX-1vTbvUXWHj0b118pvrTLdYcDH5v9R5aH-YBT8gzzB6zgg_4vZkThLtKwukhsNDieRbndLPJaS9vMxpNZ/pub?start=false&loop=false&delayms=3000) -->
 
+## Table of Contents 
+
+* [Links](#links)
+* [License](#license)
+* [Description](#description)
+* [User Story](#user-story)
+* [Demo](#demo)
+* [Initial Concepts and WireFrames](#Concepts)
+* [Technologies](#technologies)
+* [Structure](#structure)
+* [Project Management](#Agile)
+* [Scripts](#scripts)
+* [Packages](#packages)
+* [Database](#database)
+---
+* [Features](#features)
+* [Test](#test)
+* [Credits](#credits)
+* [How to Contribute](#how-to-contribute)
+----
+* [Code of Conduct](#code-of-conduct)
+
 
 ## User Story
 AS a user I want to generate an HTML landing page for my personal or commercial use.<br>
@@ -52,27 +74,6 @@ SO when I have completed my desired layout I am able to view, download or delete
 
 ## Concepts
 
-## Table of Contents 
-
-* [Links](#links)
-* [License](#license)
-* [Description](#description)
-* [User Story](#user-story)
-* [Demo](#demo)
-* [Initial Concepts and WireFrames](#Concepts)
-* [Technologies](#technologies)
-* [Structure](#structure)
-* [Project Management](#Agile)
-* [Scripts](#scripts)
-* [Packages](#packages)
-* [Database](#database)
----
-* [Features](#features)
-* [Test](#test)
-* [Credits](#credits)
-* [How to Contribute](#how-to-contribute)
-----
-* [Code of Conduct](#code-of-conduct)
 
 ## Technologies
 
